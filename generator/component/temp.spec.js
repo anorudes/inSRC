@@ -41,7 +41,7 @@ describe('<%= upCaseName %>', ()=>{
 		// use Regexes to test that you are using the right bindings {{  }}
 		
 		it('should have name in template [REMOVE]', ()=>{
-			expect(<%= upCaseName %>Template).to.match(/{{\s?vm\.name\s?}}/g);
+			expect(<%= upCaseName %>Template).to.match(/{{\s?ctrl\.name\s?}}/g);
 		});
 	});
 	

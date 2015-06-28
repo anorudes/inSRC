@@ -6,7 +6,7 @@ let <%= name %>Component = function(){
 		template,
 		controller,
 		restrict: 'E',
-		controllerAs: 'vm',
+		controllerAs: 'ctrl',
 		scope: {},
 		bindToController: true
 	};
