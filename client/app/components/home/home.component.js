@@ -1,6 +1,5 @@
-import controller from './home.controller';
 import template from './home.html!text';
-import './home.css!';
+import controller from './home.controller';
 
 let homeComponent = function(){
 	return {

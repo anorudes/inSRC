@@ -3,7 +3,6 @@ import 'angular-ui-router';
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
-import 'normalize.css';
 
 let appModule = angular.module('app', [
 	'ui.router',

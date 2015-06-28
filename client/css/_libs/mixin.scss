@@ -1,0 +1,136 @@
+
+@mixin border-radius($radius) {
+      -webkit-border-radius: $radius;
+      -moz-border-radius: $radius;
+      border-radius: $radius;
+          behavior: url(PIE.htc);
+}
+
+
+@mixin transition-e($delay) {
+  transition: all $delay ease;
+  -o-transition: all $delay ease;
+  -ms-transition: all $delay ease;
+  -moz-transition: all $delay ease;
+  -webkit-transition: all $delay ease;
+}
+
+@mixin transition($delay) {
+  transition: all $delay linear;
+  -o-transition: all $delay linear;
+  -ms-transition: all $delay linear;
+  -moz-transition: all $delay linear;
+  -webkit-transition: all $delay linear;
+}
+
+@mixin transition-filter($delay) {
+  -o-transition: filter $delay linear;
+     transition: filter $delay linear;
+  -ms-transition: -ms-filter $delay linear;
+  -moz-transition: -moz-filter $delay linear;
+  -webkit-transition: -webkit-filter $delay linear;
+}
+
+
+@mixin inline() {
+  display: inline-block;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
+}
+
+
+@mixin brightness($a) {
+    -webkit-backface-visibility:hidden;
+    -webkit-transform:translateZ(o);    
+      &:hover {
+      -webkit-filter: brightness($a);
+      -moz-filter: brightness($a);
+      -ms-filter: brightness($a);
+      filter: brightness($a);
+      }
+}
+
+
+@mixin clear() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  
+  &:after {
+    clear: both;
+  }
+}
+
+
+@function calculateRem($size) {
+  $remSize: $size / 10px;
+  @return $remSize * 1rem;
+}
+
+@function calculateEm($size) {
+  $remSize: $size / 10px;
+  @return $remSize * 1em;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateEm($size);
+}
+
+
+
+@mixin fantom($target:'&:before') {
+  #{$target} {
+    content: "";
+    height: 100%;
+    width: 0;
+    margin-left: -0.3em;
+    display: inline-block;
+    vertical-align: middle;
+
+  }
+}
+
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+
+  #{$property}: $value;
+}
+
+
+@mixin h-center {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);    
+}
+
+@mixin v-center {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);    
+}
+
+@mixin table {
+  display: table;
+  height: 100%;
+  width: 100%;
+  > div {
+    display: table-cell;
+    vertical-align: top;
+    height: 100%;
+  }
+}
+
+
+@mixin box {
+  -webkit-box-sizing: border-box;        
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;     
+}

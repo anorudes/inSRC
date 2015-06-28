@@ -7,7 +7,11 @@ var gulp	 		  = require('gulp'),
 		htmlreplace = require('gulp-html-replace'),
 		ngAnnotate  = require('gulp-ng-annotate'),
 		serve			  = require('browser-sync'),
-		yargs			  = require('yargs').argv
+		yargs			  = require('yargs').argv,
+    sourcemaps  = require('gulp-sourcemaps'),
+    sass        = require('gulp-sass'),
+    minifyCss   = require('gulp-minify-css'),
+    autoprefixer = require('gulp-autoprefixer');
 
 var root = 'client';
 
@@ -76,6 +80,24 @@ gulp.task('build', function() {
 		});
 });
 
+gulp.task('sass', function() {
+    return gulp.src('./client/css/*.scss').pipe(sourcemaps.init()).pipe(sass({
+        errLogToConsole: false,
+        onError: function(err) {
+            return notify().write(err);
+        }
+    })).pipe(minifyCss({
+        compatibility: 'ie8'
+    }))
+    .pipe(autoprefixer({
+        browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'ios 6', 'android 4'],
+        cascade: false
+    }))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./client/css'));
+});
+
+
 gulp.task('component', function(){
 	var cap = function(val){
 		return val.charAt(0).toUpperCase() + val.slice(1);
@@ -96,4 +118,8 @@ gulp.task('component', function(){
 		.pipe(gulp.dest(destPath));
 });
 
-gulp.task('default', ['serve'])
+gulp.task('watch', function() {
+    gulp.watch(['./client/css/**/*.scss'], ['sass']);
+});
+
+gulp.task('default', ['serve', 'sass', 'watch'])

@@ -5,12 +5,10 @@ import homeComponent from './home.component';
 let homeModule = angular.module('home', [
 	'ui.router'
 ])
-.config(($stateProvider, $urlRouterProvider)=>{
-	$urlRouterProvider.otherwise('/');
-	
+.config(($stateProvider)=>{
 	$stateProvider
 		.state('home', {
-			url: '/',
+			url: '/home',
 			template: '<home></home>'
 		});
 })
