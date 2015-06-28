@@ -22,6 +22,9 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.5.5",
     "core-js": "npm:core-js@0.9.14",
     "css": "github:systemjs/plugin-css@0.1.12",
+    "hammer": "github:hammerjs/hammer.js@2.0.4",
+    "jquery": "github:components/jquery@2.1.4",
+    "materialize-css": "npm:materialize-css@0.96.1",
     "normalize.css": "github:necolas/normalize.css@3.0.3",
     "text": "github:systemjs/plugin-text@0.0.2",
     "github:angular-ui/ui-router@0.2.15": {
@@ -122,6 +125,9 @@ System.config({
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:materialize-css@0.96.1": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:os-browserify@0.1.2": {
       "os": "github:jspm/nodelibs-os@0.1.0"

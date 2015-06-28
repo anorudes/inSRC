@@ -6,7 +6,7 @@ let homeComponent = function(){
 		template,
 		controller,
 		restrict: 'E',
-		controllerAs: 'vm',
+		controllerAs: 'ctrl',
 		scope: {},
 		bindToController: true
 	};
