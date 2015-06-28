@@ -1,0 +1,51 @@
+{
+  "name": "angular-webpack-starter",
+  "version": "0.0.1",
+  "description": "starter",
+  "dependencies": {},
+  "scripts": {
+    "test": "karma start",
+    "postinstall": "jspm install"
+  },
+  "keywords": [
+    "angular",
+    "webpack",
+    "es6"
+  ],
+  "author": "AngularClass",
+  "license": "ISC",
+  "jspm": {
+    "directories": {},
+    "configFile": "jspm.config.js",
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.0",
+      "angular-mocks": "npm:angular-mocks@^1.4.0",
+      "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
+      "css": "github:systemjs/plugin-css@^0.1.11",
+      "normalize.css": "github:necolas/normalize.css@^3.0.3",
+      "text": "github:systemjs/plugin-text@^0.0.2"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@5.5.5",
+      "babel-runtime": "npm:babel-runtime@5.5.5",
+      "core-js": "npm:core-js@^0.9.10"
+    }
+  },
+  "devDependencies": {
+    "browser-sync": "^2.7.6",
+    "gulp": "^3.9.0",
+    "gulp-html-replace": "^1.5.0",
+    "gulp-ng-annotate": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-template": "^3.0.0",
+    "gulp-uglify": "^1.2.0",
+    "jspm": "^0.15.7",
+    "karma": "^0.12.36",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-jspm": "^1.1.5",
+    "karma-mocha": "^0.1.10",
+    "karma-mocha-reporter": "^1.0.2",
+    "yargs": "^3.10.0"
+  }
+}
