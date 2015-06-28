@@ -1,6 +1,5 @@
 import template from './<%= name %>.html!text';
-import controller from './<%= name %>.controller.js';
-import './<%= name %>.css';
+import controller from './<%= name %>.controller';
 
 let <%= name %>Component = function(){
 	return {
