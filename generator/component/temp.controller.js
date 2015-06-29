@@ -1,8 +1,9 @@
 class <%= upCaseName %>Controller {
-	constructor(){
-		this.name = '<%= name %>';
+	constructor($scope){
+		$scope.name = '<%= name %>';
 	}
 }
 
+CartShowController.$inject = ['$scope'];
 
 export default <%= upCaseName %>Controller;

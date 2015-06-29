@@ -6,7 +6,7 @@ let navbarComponent = function(){
 		template,
 		controller,
 		restrict: 'E',
-		controllerAs: 'ctrl',
+		controllerAs: 'ctrl2',
 		scope: {},
 		bindToController: true
 	};
