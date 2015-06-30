@@ -1,15 +1,17 @@
 import angular from 'angular';
 import 'angular-ui-router';
+import 'angular-animate';
 import Common from './common/common';
 import Components from './components/components';
 import Services from './services/services';
 import AppComponent from './app.component';
 
 let appModule = angular.module('app', [
-	'ui.router',
-	Services.name,
-	Common.name,
-	Components.name
+  'ngAnimate',
+  'ui.router',
+  Services.name,
+  Common.name,
+  Components.name
 ])
 .directive('app', AppComponent);
 

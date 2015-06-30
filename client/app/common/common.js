@@ -1,10 +1,10 @@
 import angular from 'angular';
 import Navbar from './navbar/navbar';
-import Cart from './cart/cart';
+import Note from './note/note';
 
 let commonModule = angular.module('app.common', [
 	Navbar.name,
-  Cart.name
+  Note.name
 ]);
 
 export default commonModule;

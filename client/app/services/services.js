@@ -1,8 +1,8 @@
 import angular from 'angular';
-import CartService from './cart/cart.service';
+import NoteService from './note/note.service';
 
 let servicesModule = angular.module('app.services', [
-	CartService.name
+	NoteService.name
 ]);
 
 export default servicesModule;

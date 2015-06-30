@@ -1,0 +1,35 @@
+// ***************************************************************************
+// Note List Filter
+// ***************************************************************************
+.section-note-search {
+ margin-top: 10px;
+}
+
+
+// ***************************************************************************
+// Note List
+// ***************************************************************************
+
+.section-note-list {
+  li {
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 0;
+    position: relative;
+  
+
+    .note-mini {
+      @include transition-e(.2s);
+      &__text {
+        display: block;
+        padding-top: 5px;
+      }
+    }
+    &:hover {
+      .note-mini {
+        transform: translateX(10px);
+        color: $active;
+      }
+    }
+  }
+}

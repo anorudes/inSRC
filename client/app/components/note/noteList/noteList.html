@@ -1,0 +1,27 @@
+<section class="section-note-search">
+	<div class="row">
+	  <form class="col s12">
+	    <div class="row">
+	      <div class="input-field col s12">
+	        <input id="icon_prefix" type="text" class="validate">
+	        <label for="icon_prefix">Find</label>
+	      </div>
+	    </div>
+	  </form>
+	</div>
+</section>
+      
+<section class="section-note-list">
+	<ul class="collection">
+		<div class="col s12">
+			<li class="note-list collection-item" ng-repeat="note in notes" ui-sref="note-show({id: $index})">
+				<div class="note-mini">
+					<span class="note-mini__title">{{ note.title }}</span>
+					<span class="note-mini__text">
+					{{ note.text }}
+					</span>
+			</div>
+			</li>
+		</div>
+	</ul>
+</section>
