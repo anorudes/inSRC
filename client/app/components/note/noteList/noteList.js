@@ -3,12 +3,13 @@ import 'angular-ui-router';
 import noteListComponent from './noteList.component';
 
 let noteListModule = angular.module('noteList', [])
-.config(($stateProvider)=>{
+.config(($stateProvider, $urlRouterProvider)=>{
 	$stateProvider
-		.state('note-list', {
+		.state('list', {
 			url: '/list',
 			template: '<note-list></note-list>'
 		});
+  $urlRouterProvider.otherwise('list');
 })
 .directive('noteList', noteListComponent);
 

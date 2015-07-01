@@ -5,8 +5,8 @@ import noteShowComponent from './noteShow.component';
 let noteShowModule = angular.module('noteShow', [])
 .config(($stateProvider)=>{
 	$stateProvider
-		.state('note-show', {
-			url: '/note/:id',
+		.state('show', {
+			url: '/show/:id',
 			template: '<note-show></note-show>'
 		});
 })

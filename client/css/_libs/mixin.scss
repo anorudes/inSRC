@@ -42,7 +42,7 @@
 
 @mixin brightness($a) {
     -webkit-backface-visibility:hidden;
-    -webkit-transform:translateZ(o);    
+    -webkit-transform:translateZ(o);
       &:hover {
       -webkit-filter: brightness($a);
       -moz-filter: brightness($a);
@@ -65,13 +65,13 @@
 }
 
 
-@function calculateRem($size) {
-  $remSize: $size / 10px;
+@function rem($size) {
+  $remSize: $size / 16px;
   @return $remSize * 1rem;
 }
 
-@function calculateEm($size) {
-  $remSize: $size / 10px;
+@function em($size) {
+  $remSize: $size / 16px;
   @return $remSize * 1em;
 }
 
@@ -107,14 +107,14 @@
   left: 50%;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
-  transform: translateX(-50%);    
+  transform: translateX(-50%);
 }
 
 @mixin v-center {
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
-  transform: translateY(-50%);    
+  transform: translateY(-50%);
 }
 
 @mixin table {
@@ -130,7 +130,7 @@
 
 
 @mixin box {
-  -webkit-box-sizing: border-box;        
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;     
+  box-sizing: border-box;
 }

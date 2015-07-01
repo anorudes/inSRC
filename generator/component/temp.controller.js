@@ -4,6 +4,6 @@ class <%= upCaseName %>Controller {
 	}
 }
 
-CartShowController.$inject = ['$scope'];
+<%= upCaseName %>Controller.$inject = ['$scope'];
 
 export default <%= upCaseName %>Controller;

@@ -1,8 +1,13 @@
+main {
+  position: relative;
+  min-height: 265px;
+}
+
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
   left: 0;
   right: 0;
-  @include transition-e(.3s);
+  //@include transition-e(.3s);
 }
 
 [ui-view].ng-enter {

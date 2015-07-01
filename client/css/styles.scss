@@ -1,8 +1,14 @@
 @import '_libs/mixin';
 
+@import '_libs/normalize.css';
+
+@import '_partials/base';
 @import '_partials/ui-view';
 @import '_partials/variables';
 @import '_partials/navbar';
 @import '_partials/note';
+@import '_partials/header';
+@import '_partials/footer';
 
-@import '_libs/normalize.css';
+
+

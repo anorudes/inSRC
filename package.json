@@ -22,6 +22,7 @@
       "angular-animate": "github:angular/bower-angular-animate@^1.4.1",
       "angular-mocks": "npm:angular-mocks@^1.4.0",
       "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
+      "core-js": "npm:core-js@^0.9.18",
       "css": "github:systemjs/plugin-css@^0.1.11",
       "hammer": "github:hammerjs/hammer.js@^2.0.4",
       "jquery": "github:components/jquery@^2.1.4",

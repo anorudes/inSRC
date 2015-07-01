@@ -2,7 +2,7 @@
 // Note List Filter
 // ***************************************************************************
 .section-note-search {
- margin-top: 10px;
+ margin: 10px 0px -30px 0px;
 }
 
 
@@ -11,12 +11,13 @@
 // ***************************************************************************
 
 .section-note-list {
+  margin-bottom: -20px;
   li {
     cursor: pointer;
     padding: 0;
     margin-bottom: 0;
     position: relative;
-  
+    
 
     .note-mini {
       @include transition-e(.2s);
@@ -31,5 +32,68 @@
         color: $active;
       }
     }
+  }
+}
+
+// ***************************************************************************
+// Note One
+// ***************************************************************************
+
+.section-note-show {
+  .row {
+    text-align: center;
+    .col {
+      min-width: $note-width;
+      display: inline-block;
+      text-align: left;
+      float: none;
+    };
+  }
+  .note {
+    padding-bottom: 25px !important;
+    &__text {
+
+    }
+    &__tags {
+      border-top: 1px solid rgba(255, 255, 255, .5);
+      padding-top: 10px;
+      margin-top: 10px;
+      display: block;
+      opacity: .5;
+    }
+    &__title {
+
+    }
+  }
+}
+
+// ***************************************************************************
+// Note Add, edit
+// ***************************************************************************
+
+.section-note-add, .section-node-edit {
+  .row .col {
+    width: 50%;
+    min-width: $note-width;
+    margin: 0 auto !important;
+    display: block;
+    float: none;
+  }
+}
+
+.note-edit {
+  &__input {
+    padding: 0 0 0 15px;
+  }
+  &__code {
+    height: 150px;
+    padding: 15px;
+  }
+  .btn {
+    margin-top: 20px;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    padding-right: 40px;
   }
 }

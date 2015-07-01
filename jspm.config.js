@@ -14,6 +14,14 @@ System.config({
 });
 
 System.config({
+  "meta": {
+    "jspm_packages/babel-polyfill": {
+      "format": "global"
+    }
+  }
+});
+
+System.config({
   "map": {
     "angular": "github:angular/bower-angular@1.4.1",
     "angular-animate": "github:angular/bower-angular-animate@1.4.1",
@@ -21,7 +29,7 @@ System.config({
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
     "babel": "npm:babel-core@5.5.5",
     "babel-runtime": "npm:babel-runtime@5.5.5",
-    "core-js": "npm:core-js@0.9.14",
+    "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.12",
     "hammer": "github:hammerjs/hammer.js@2.0.4",
     "jquery": "github:components/jquery@2.1.4",
@@ -117,6 +125,11 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:core-js@0.9.14": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
+    "npm:core-js@0.9.18": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "process": "github:jspm/nodelibs-process@0.1.1",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
