@@ -1,9 +1,9 @@
 class NoteListController {
-	constructor($scope, NoteService){
-		$scope.notes = NoteService.getAll();
+	constructor(NoteService){
+		this.notes = NoteService.getAll();
 	}
 }
 
-NoteListController.$inject = ['$scope','NoteService'];
+NoteListController.$inject = ['NoteService'];
 
 export default NoteListController;

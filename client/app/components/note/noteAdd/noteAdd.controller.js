@@ -1,10 +1,10 @@
 class NoteAddController {
-	constructor($scope, NoteService, $state){
+	constructor(NoteService, $state){
     this._resetForm = () => {
-      $scope.note = angular.copy(NoteService.emptyItem);
+      this.note = angular.copy(NoteService.emptyItem);
     }
-		$scope.save = () => {
-      NoteService.add($scope.note);
+		this.save = () => {
+      NoteService.add(this.note);
       this._resetForm();
       $state.go('list');
     }
@@ -12,6 +12,6 @@ class NoteAddController {
 	}
 }
 
-NoteAddController.$inject = ['$scope', 'NoteService', '$state'];
+NoteAddController.$inject = ['NoteService', '$state'];
 
 export default NoteAddController;

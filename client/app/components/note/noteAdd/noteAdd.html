@@ -2,18 +2,18 @@
   <div class="row note-edit">
      <form class="col">
          <div class="input-field col">
-           <input placeholder="" class="note-edit__input" ng-model="note.title" type="text">
+           <input placeholder="" class="note-edit__input" ng-model="vm.note.title" type="text">
            <label for="first_name">Title</label>
          </div>
          <div class="input-field col">
-           <input class="note-edit__input"  ng-model="note.tags" type="text">
+           <input class="note-edit__input"  ng-model="vm.note.tags" type="text">
            <label for="last_name">Tags</label>
          </div>
          <div class="input-field col">
-          <textarea name="" ng-model="note.text" class="note-edit__code"></textarea>
+          <textarea name="" ng-model="vm.note.text" class="note-edit__code"></textarea>
          </div>
          <div class="input-field col">
-           <button ng-click="save()" class="btn waves-effect waves-light" type="submit" name="action">
+           <button ng-click="vm.save()" class="btn waves-effect waves-light" type="submit" name="action">
             <i class="material-icons left">done</i>
               Save
             </button>

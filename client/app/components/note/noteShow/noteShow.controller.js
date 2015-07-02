@@ -1,9 +1,9 @@
 class NoteShowController {
-	constructor($scope, NoteService, $stateParams){
-		$scope.note = NoteService.getOne($stateParams.id);
+	constructor(NoteService, $stateParams){
+		this.note = NoteService.getOne($stateParams.id);
 	}
 }
 
-NoteShowController.$inject = ['$scope','NoteService', '$stateParams'];
+NoteShowController.$inject = ['NoteService', '$stateParams'];
 
 export default NoteShowController;

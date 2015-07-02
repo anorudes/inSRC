@@ -6,7 +6,7 @@ let configComponent = function(){
 		template,
 		controller,
 		restrict: 'E',
-		controllerAs: 'ctrl',
+		controllerAs: 'vm',
 		scope: {},
 		bindToController: true
 	};

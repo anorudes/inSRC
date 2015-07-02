@@ -14,7 +14,7 @@
 <section class="section-note-list">
 	<ul class="collection">
 		<div class="col s12">
-			<li class="note-list collection-item" ng-repeat="note in notes | orderBy:'-id'" ui-sref="show({id: note.id})">
+			<li class="note-list collection-item" ng-repeat="note in vm.notes | orderBy:'-id'" ui-sref="show({id: note.id})">
 				<div class="note-mini">
 					<span class="note-mini__title">{{ note.title }}</span>
 					<span class="note-mini__text">

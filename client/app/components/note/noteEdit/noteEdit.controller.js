@@ -1,9 +1,6 @@
 class NoteEditController {
-	constructor($scope){
-		$scope.name = 'noteEdit';
+	constructor(){
 	}
 }
-
-NoteEditController.$inject = ['$scope'];
 
 export default NoteEditController;

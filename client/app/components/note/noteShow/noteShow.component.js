@@ -7,7 +7,7 @@ let noteShowComponent = function(){
 		controller,
 		restrict: 'E',
 		scope: {},
-		controllerAs: 'noteShow'
+		controllerAs: 'vm'
 	};
 };
 
