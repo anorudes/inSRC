@@ -11,6 +11,26 @@ let noteListModule = angular.module('noteList', [])
 		});
   $urlRouterProvider.otherwise('list');
 })
-.directive('noteList', noteListComponent);
+.directive('noteList', noteListComponent)
+.filter('searchByTags', function(){
+  return function(items, input = ""){
+    return items.filter(function(item){
+      let noteTags = item.tags.split(',');
+      let searchTags = input.split(',');
+      let found = 0;
+      for (let searchTag of searchTags) {
+        for (let noteTag of noteTags) {
+          if (noteTag.indexOf(searchTag) >= 0) {
+            found += 1;
+            break;
+          }
+        }
+      }
+      return found === searchTags.length;
+    });
+  };
+});
+
+
 
 export default noteListModule;
