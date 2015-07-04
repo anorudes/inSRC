@@ -1,40 +1,50 @@
 import angular from 'angular';
-import data from './example';
 
 let NoteService = angular.module('NoteService', [])
-.service('NoteService', function($timeout) {
-  let items = data;
-  let getIndex = (id) => {
-    let item = items.find(el => el.id === id);
-    let index = items.indexOf(item);
-    return index;
-  };
+.service('NoteService', function($timeout, $http) {
+  let serverURL = 'http://127.0.0.1:4000/data/';
+  let data = {items: []};
+
   let getMaxId = () => {
-    let maxId = 0;
-    items.map(function(el){
-        maxId = el.id > maxId ? el.id : maxId;
-    });
-    return maxId;
+    return Math.max.apply(Math, data.items.map(el => el.id));
   };
+
   this.emptyItem = {
     id: "",
     title: "",
     tags: "",
     text: "",
   };
+
   this.getAll = () => {
-    return items;
+    return data.items;
   };
+
   this.getOne = (id) => {
-    return items[getIndex(id*1)];
+    return data.items.find(el => el.id === id);
   };
+
   this.delete = (id) => {
 
   };
+
   this.add = (item) => {
     item.id = getMaxId() + 1;
-    items.push(item);
+    data.items.push(item);
   };
+
+  this.resolveData = () => {
+    return $http.get(serverURL + 'get').then((res) => {
+      data.items = res.data;
+      return data.items;
+    });
+  };
+
+  this.saveData = () => {
+    return $http.post(serverURL + 'update', {data: data.items});
+  };
+
+
 });
 
 export default NoteService;

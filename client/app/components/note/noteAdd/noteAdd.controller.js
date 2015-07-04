@@ -5,6 +5,7 @@ class NoteAddController {
     }
 		this.save = () => {
       NoteService.add(this.note);
+      NoteService.saveData();
       this._resetForm();
       $state.go('list');
     }

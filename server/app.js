@@ -10,6 +10,13 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
 
+// CORS
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get('/data/get', function (req, res) {
 	fs.readFile(dbPath, function(err, data){
 		
@@ -28,7 +35,7 @@ app.post('/data/update', function (req, res) {
 		res.status(400).send();
 		return;
 	}
-	fs.writeFile(dbPath, req.body.data);
+	fs.writeFile(dbPath, JSON.stringify(req.body.data));
 	res.send();
 });
 
@@ -38,7 +45,7 @@ var server = app.listen(4000, function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('Server is listening at http://%s:%s', host, port);
 
 });
 

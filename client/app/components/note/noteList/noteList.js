@@ -2,12 +2,15 @@ import angular from 'angular';
 import 'angular-ui-router';
 import noteListComponent from './noteList.component';
 
-let noteListModule = angular.module('noteList', [])
+let noteListModule = angular.module('noteList', ['NoteService'])
 .config(($stateProvider, $urlRouterProvider)=>{
 	$stateProvider
 		.state('list', {
 			url: '/list',
-			template: '<note-list></note-list>'
+			template: '<note-list></note-list>',
+      resolve: {
+        notes: (NoteService) => NoteService.resolveData()
+      }
 		});
   $urlRouterProvider.otherwise('list');
 })
