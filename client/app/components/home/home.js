@@ -5,7 +5,7 @@ import homeComponent from './home.component';
 let homeModule = angular.module('home', [
 	'ui.router'
 ])
-.config(($stateProvider)=>{
+.config(($stateProvider) => {
 	$stateProvider
 		.state('home', {
 			url: '/home',
