@@ -1,0 +1,12 @@
+<div class="preview">
+  <div class="preview__close" ng-click="vm.close()"></div>
+  <div class="preview__title">{{ vm.note.title }}</div>
+  <div class="preview__text">{{ vm.note.text }}</div>
+  <div class="preview__tags">{{ vm.note.tags }}</div>
+  <div class="preview__buttons">
+    <!-- toDo -->
+    <a class="preview__icon material-icons" ui-sref="show({id: vm.note.id})">input</a>
+    <!-- toDo -->
+    <a class="preview__icon material-icons" ng-click="vm.delete(vm.note.id)">delete</a>
+  </div>
+</div>

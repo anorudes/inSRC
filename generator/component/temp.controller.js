@@ -1,9 +1,6 @@
 class <%= upCaseName %>Controller {
-	constructor($scope){
-		$scope.name = '<%= name %>';
+	constructor(){
 	}
 }
-
-<%= upCaseName %>Controller.$inject = ['$scope'];
 
 export default <%= upCaseName %>Controller;
