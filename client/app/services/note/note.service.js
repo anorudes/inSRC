@@ -21,7 +21,7 @@ let NoteService = angular.module('NoteService', [])
   };
 
   this.getOne = (id) => {
-    return data.items.find(el => el.id === id);
+    return data.items.find(el => el.id == id);
   };
 
   this.delete = (id) => {
