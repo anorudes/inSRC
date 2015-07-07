@@ -3,14 +3,13 @@ class NoteAddController {
     this._resetForm = () => {
       this.note = angular.copy(NoteService.emptyItem);
     }
+
 		this.save = () => {
       NoteService.add(this.note);
       NoteService.saveData();
       this._resetForm();
       /* toDo */
-      setTimeout(function() {
-        $state.transitionTo('list');
-      }, 10);
+      $state.transitionTo('list');
     }
     this._resetForm();
 	}

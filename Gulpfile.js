@@ -11,7 +11,8 @@ var gulp	 		  = require('gulp'),
     sourcemaps  = require('gulp-sourcemaps'),
     sass        = require('gulp-sass'),
     minifyCss   = require('gulp-minify-css'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    shell = require('gulp-shell');
 
 var root = 'client';
 
@@ -118,8 +119,12 @@ gulp.task('component', function(){
 		.pipe(gulp.dest(destPath));
 });
 
+gulp.task('dataServer', shell.task([
+  'node ./server/bin/www'
+]));
+
 gulp.task('watch', function() {
     gulp.watch(['./client/css/**/*.scss'], ['sass']);
 });
 
-gulp.task('default', ['serve', 'sass', 'watch'])
+gulp.task('default', ['serve', 'sass', 'dataServer', 'watch'])

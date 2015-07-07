@@ -2,7 +2,7 @@ import angular from 'angular';
 
 let NoteService = angular.module('NoteService', [])
 .service('NoteService', function($timeout, $http) {
-  let serverURL = 'http://127.0.0.1:4000/data/';
+  const serverURL = 'http://127.0.0.1:4000/data/';
   let data = {items: []};
 
   let getMaxId = () => {
@@ -25,7 +25,7 @@ let NoteService = angular.module('NoteService', [])
   };
 
   this.delete = (id) => {
-
+    data.items.splice(data.items.indexOf(this.getOne(id)), 1);
   };
 
   this.add = (item) => {

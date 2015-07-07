@@ -3,18 +3,20 @@ import 'angular-ui-router';
 import noteListComponent from './noteList.component';
 
 let noteListModule = angular.module('noteList', ['NoteService'])
+
 .config(($stateProvider, $urlRouterProvider)=>{
 	$stateProvider
 		.state('list', {
 			url: '/list',
 			template: '<note-list></note-list>',
       resolve: {
-        notes: (NoteService) => NoteService.resolveData()
+        notes: (NoteService) => NoteService.getAll().length || NoteService.resolveData()
       }
 		});
   $urlRouterProvider.otherwise('list');
 })
 .directive('noteList', noteListComponent)
+
 .filter('searchByTags', function(){
   return function(items, input = ""){
     return items.filter(function(item){
