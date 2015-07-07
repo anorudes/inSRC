@@ -1,9 +1,10 @@
 var express = require('express');
 var bodyParser = require('body-parser')
 var fs = require('fs');
+var path = require('path');
 var app = express();
 
-var dbPath = './db/data.json';
+var dbPath = path.join(__dirname, 'db', 'data.json');
 
 app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies

@@ -10,9 +10,7 @@ let noteListModule = angular.module('noteList', ['NoteService'])
 			url: '/list',
 			template: '<note-list></note-list>',
       resolve: {
-        notes: (NoteService) => {
-          return NoteService.getAll().length || NoteService.resolveData();
-        }
+        notes: (NoteService) => NoteService.getAll().length || NoteService.resolveData()
       }
 		});
   $urlRouterProvider.otherwise('list');
