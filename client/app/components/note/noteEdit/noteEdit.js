@@ -6,7 +6,7 @@ let noteEditModule = angular.module('noteEdit', [])
 .config(($stateProvider)=>{
   $stateProvider
     .state('edit', {
-      url: '/edit',
+      url: '/edit/:id',
       template: '<note-edit></note-edit>'
     });
 })

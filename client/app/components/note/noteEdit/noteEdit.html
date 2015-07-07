@@ -1,3 +1,29 @@
-<div>
-	<h1>test</h1>
-</div>
+<section class="section-note-edit">
+  <div class="row note-edit">
+     <form class="col">
+         <div class="input-field col">
+           <input placeholder="" class="note-edit__input" ng-model="vm.note.title" type="text">
+           <label for="first_name" class="active">Title</label>
+         </div>
+         <div class="input-field col">
+           <input class="note-edit__input"  ng-model="vm.note.tags" type="text">
+           <label for="last_name" class="active">Tags</label>
+         </div>
+         <div class="input-field col">
+          <textarea name="" ng-model="vm.note.text" class="note-edit__code"></textarea>
+         </div>
+         <div class="input-field col">
+           <button ng-click="vm.update()" class="btn waves-effect waves-light" type="submit" name="action">
+            <i class="material-icons left">done</i>
+              Save
+            </button>
+
+            
+            <button ng-confirm-click="Would you like to delete?" confirmed-click="vm.delete()" class="btn waves-effect waves-light" type="submit" name="action">
+             <i class="material-icons left">delete</i>
+               Delete
+            </button>
+         </div>
+       </div>
+   </div>
+</section>

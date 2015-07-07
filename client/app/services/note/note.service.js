@@ -28,6 +28,10 @@ let NoteService = angular.module('NoteService', [])
     data.items.splice(data.items.indexOf(this.getOne(id)), 1);
   };
 
+  this.update = (id, item) => {
+    data.items[id] = angular.copy(item);
+  };
+
   this.add = (item) => {
     item.id = getMaxId() + 1;
     data.items.push(item);
