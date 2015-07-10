@@ -37,15 +37,14 @@ let NoteService = angular.module('NoteService', [])
     data.items.push(item);
   };
 
-  this.resolveData = () => {
-    return $http.get(serverURL + 'get').then((res) => {
-      data.items = res.data;
-      return data.items;
-    });
+  this.resolveData = async () => {
+    let res = await $http.get(serverURL + 'get');
+    data.items = res.data;
+    return data.items;
   };
 
-  this.saveData = () => {
-    return $http.post(serverURL + 'update', {data: data.items});
+  this.saveData = async () => {
+    return await $http.post(serverURL + 'update', {data: data.items});
   };
 
 
