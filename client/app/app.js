@@ -1,5 +1,4 @@
 import 'core-js/shim';
-import angular from 'angular';
 import 'angular-ui-router';
 import 'angular-animate';
 import Common from './common/common';
@@ -10,6 +9,7 @@ import AppComponent from './app.component';
 let appModule = angular.module('app', [
   'ngAnimate',
   'ui.router',
+  'textAngular',
   Services.name,
   Common.name,
   Components.name

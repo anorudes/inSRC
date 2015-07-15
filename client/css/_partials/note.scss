@@ -74,9 +74,9 @@
 // ***************************************************************************
 
 .section-note-add, .section-note-edit {
-  margin-top: 55px;
+  margin-top: 30px;
   .row .col {
-    width: 50%;
+    width: 61.5%;
     min-width: $note-width;
     margin: 0 auto !important;
     display: block;
@@ -93,13 +93,24 @@
     padding: 15px;
   }
   .btn {
-    margin-top: 20px;
+    margin: 10px auto;
     height: 40px;
     line-height: 40px;
     position: relative;
     padding-right: 40px;
+    display: block;
+    z-index: 10;
+  }
+  .buttons {
+    text-align: center;
+    .btn {
+      display: inline-block !important;
+      margin: 10px 5px;
+    }
   }
 }
+
+
 
 // ***************************************************************************
 // Note Preview
@@ -185,4 +196,52 @@
       margin-right: 0;
     }
   }
+}
+
+// ***************************************************************************
+// fix editor
+// ***************************************************************************
+
+.note-edit {
+  .btn-group {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .btn-default {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 20px;
+    min-width: 0;
+    padding: 0;
+    text-align: center;
+    margin: 1px;
+    background-color: #dfdfdf;
+    color: #9f9fa1;
+    box-shadow: none;
+    @include transition-e(.2s);
+    @include brightness(1.05);
+    font-size: 10px;
+    i {
+      font-size: 1em;
+    }
+  }
+  #toolbarWC {
+    display: none !important;
+  }
+  #toolbarCC {
+    display: none !important;
+  }
+}
+
+.border-around {
+  border: 1px solid #ccc;
+}
+
+.note-edit__code {
+  height: auto;
+}
+
+.ta-scroll-window {
+  margin-top: 10px;
 }

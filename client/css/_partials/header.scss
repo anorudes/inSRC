@@ -5,6 +5,11 @@
 .navbar {
   &__title {
     font-size: 20px;
+    padding-top: 20px;
+    display: block;
+    i {
+      margin-right: 3px;
+    }
   }
   &__tabs {
     position: absolute;
@@ -12,7 +17,13 @@
     right: 0;
   }
   &__tab {
+    width: 80px;
+    text-align: center;
     cursor: pointer;
+    font-size: 14px;
+    i {
+      margin-right: 2px;
+    }
   }
 }
 

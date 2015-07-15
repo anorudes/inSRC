@@ -3,8 +3,9 @@ class NoteEditController {
     this.id = $stateParams.id;
     this.note = NoteService.getOne(this.id);
     this.update = () => {
-      console.log(this.id);
-      console.log(this.note);
+      if (!this.note.title) {
+        return false;
+      }
       NoteService.update(this.id, this.note);
       NoteService.saveData();
       $state.transitionTo('list');

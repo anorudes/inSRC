@@ -4,7 +4,7 @@
       <div class="card blue-grey darken-1">
         <div class="card-content white-text note">
           <span class="card-title note__title">{{ vm.note.title }}</span>
-          <p class="note__text">{{ vm.note.text }}</p>
+          <div class="note__text" text-angular ng-model="vm.note.text"></div>
           <span class="note__tags">Tags: {{ vm.note.tags }}</span>
         </div>
       </div>

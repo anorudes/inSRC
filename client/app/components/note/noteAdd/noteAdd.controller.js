@@ -5,6 +5,9 @@ class NoteAddController {
     }
 
 		this.save = () => {
+      if (!this.note.title) {
+        return false;
+      }
       NoteService.add(this.note);
       NoteService.saveData();
       this._resetForm();

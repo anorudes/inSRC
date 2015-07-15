@@ -1,4 +1,3 @@
-import angular from 'angular';
 import 'angular-ui-router';
 import noteShowComponent from './noteShow.component';
 

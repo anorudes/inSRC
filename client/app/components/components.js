@@ -1,4 +1,3 @@
-import angular from 'angular';
 import Config from './config/config';
 import About from './about/about';
 import NoteShow from './note/noteShow/noteShow';

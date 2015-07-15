@@ -1,5 +1,3 @@
-import angular from 'angular';
-
 let NoteService = angular.module('NoteService', [])
 .service('NoteService', function($timeout, $http) {
   const serverURL = 'http://127.0.0.1:4000/data/';

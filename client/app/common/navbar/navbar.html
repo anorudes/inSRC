@@ -1,11 +1,24 @@
 <nav class="s-navbar navbar">
 	<div class="container">
     <div class="logo">
-        <h1 class="navbar__title"><a ui-sref="list">itMemo</a></h1>
+        <h1 class="navbar__title">
+          <a ui-sref="list">
+            <i class="fa fa-book"></i>
+            itMemo
+          </a>
+        </h1>
     </div>
     <ul id="nav-mobile" class="hide-on-med-and-down navbar__tabs">
-      <li><a class="navbar__tab" ui-sref="list">List</a></li>
-      <li><a class="navbar__tab" ui-sref="add">Add</a></li>
+      <li class="navbar__tab" ui-sref="list">
+        <i class="fa fa-list"></i>
+        List
+      </li>
+      <li class="navbar__tab">
+        <a class="navbar__tab" ui-sref="add">
+          <i class="fa fa-edit"></i>
+          Add
+        </a>
+      </li>
     </ul>
 	</div>
 </nav>

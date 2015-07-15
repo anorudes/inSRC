@@ -1,0 +1,14 @@
+{
+  "name": "client",
+  "version": "0.0.0",
+  "homepage": "https://github.com/anorudes/itMemo",
+  "authors": [
+    "Maxim Varovin <anorudes@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "materialize": "~0.97.0",
+    "textAngular": "~1.4.2"
+  }
+}

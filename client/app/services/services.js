@@ -1,4 +1,3 @@
-import angular from 'angular';
 import NoteService from './note/note.service';
 
 let servicesModule = angular.module('app.services', [

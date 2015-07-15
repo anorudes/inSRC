@@ -1,4 +1,3 @@
-import angular from 'angular';
 let confirmClick = angular.module('confirmClick', [])
 .directive('ngConfirmClick', [
         function(){
