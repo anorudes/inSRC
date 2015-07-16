@@ -10,10 +10,18 @@ let appModule = angular.module('app', [
   'ngAnimate',
   'ui.router',
   'textAngular',
+  'hljs',
+  'ngSanitize',
   Services.name,
   Common.name,
   Components.name
 ])
+.config(function (hljsServiceProvider) {
+  hljsServiceProvider.setOptions({
+    tabReplace: '  ',
+    
+  });
+})
 .directive('app', AppComponent);
 
 /*

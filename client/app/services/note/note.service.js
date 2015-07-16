@@ -27,10 +27,12 @@ let NoteService = angular.module('NoteService', [])
   };
 
   this.update = (id, item) => {
+    item.text = item.text.trim();
     data.items[id] = angular.copy(item);
   };
 
   this.add = (item) => {
+    item.text = item.text.trim();
     item.id = getMaxId() + 1;
     data.items.push(item);
   };
@@ -42,6 +44,7 @@ let NoteService = angular.module('NoteService', [])
   };
 
   this.saveData = async () => {
+    console.log(data.items);
     return await $http.post(serverURL + 'update', {data: data.items});
   };
 

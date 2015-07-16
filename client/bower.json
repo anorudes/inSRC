@@ -9,6 +9,8 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "materialize": "~0.97.0",
-    "textAngular": "~1.4.2"
+    "textAngular": "~1.4.2",
+    "angular-highlightjs": "~0.4.1",
+    "angular-sanitize": "~1.4.3"
   }
 }

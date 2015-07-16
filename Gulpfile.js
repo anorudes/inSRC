@@ -82,20 +82,17 @@ gulp.task('build', function() {
 });
 
 gulp.task('sass', function() {
-    return gulp.src('./client/css/*.scss').pipe(sourcemaps.init()).pipe(sass({
-        errLogToConsole: false,
-        onError: function(err) {
-            return notify().write(err);
-        }
-    })).pipe(minifyCss({
-        compatibility: 'ie8'
+    return gulp.src('client/css/styles.scss').pipe(sourcemaps.init()).pipe(sass()
+    .on('error', function(err) {
+        notify().write(err);
+        this.emit("end");
     }))
     .pipe(autoprefixer({
         browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'ios 6', 'android 4'],
         cascade: false
     }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./client/css'));
+    .pipe(gulp.dest('client/css'));
 });
 
 

@@ -26,12 +26,13 @@
         padding-top: 5px;
       }
       &__tags {
+        opacity: .7;
+        font-size: 12px;
+      }
+      &__title {
         display: block;
         font-size: 16px;
         margin-bottom: 5px;
-      }
-      &__title {
-        opacity: .7;
       }
       max-width: calc(100% - 700px);
     }
@@ -89,7 +90,10 @@
     padding: 0 0 0 15px;
   }
   &__code {
-    height: 150px;
+    height: 250px;
+    border: 1px solid #9e9e9e;
+    overflow: auto;
+    outline: none;
     padding: 15px;
   }
   .btn {
@@ -118,11 +122,13 @@
 
 .section-note-preview {
   position: fixed;
-  right: 100px;
+  right: 60px;
   background: white;
   top: 48%;
   transform: translate(0px, -50%);
-  width: 600px;
+  width: 50%;
+  max-width: 900px;
+  min-width: 600px;
   height: 400px;
   padding: 20px;
   z-index: 100;
@@ -236,10 +242,6 @@
 
 .border-around {
   border: 1px solid #ccc;
-}
-
-.note-edit__code {
-  height: auto;
 }
 
 .ta-scroll-window {
