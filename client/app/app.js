@@ -11,7 +11,6 @@ let appModule = angular.module('app', [
   'ui.router',
   'textAngular',
   'hljs',
-  'ngSanitize',
   Services.name,
   Common.name,
   Components.name

@@ -2,6 +2,7 @@ let confirmClick = angular.module('confirmClick', [])
 .directive('ngConfirmClick', [
         function(){
             return {
+                restrict: 'A',
                 link: function (scope, element, attr) {
                     var msg = attr.ngConfirmClick || "Are you sure?";
                     var clickAction = attr.confirmedClick;

@@ -1,5 +1,6 @@
-function rhtmlspecialchars(str) {
- if (typeof(str) == "string") {
+/* toDo */
+let rhtmlspecialchars = (str) => {
+ if (typeof(str) === "string") {
   str = str.replace(/&gt;/ig, ">");
   str = str.replace(/&lt;/ig, "<");
   str = str.replace(/&#039;/g, "'");
@@ -8,7 +9,7 @@ function rhtmlspecialchars(str) {
   str = str.replace(/&amp;/ig, '&'); /* must do &amp; last */
   }
  return str;
- }
+};
 
 class NoteListController {
 	constructor(NoteService){

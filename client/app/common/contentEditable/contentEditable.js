@@ -1,4 +1,4 @@
-let contentEditable = angular.module('confirmClick', [])
+let contentEditable = angular.module('contenteditable', [])
 .directive("contenteditable", function() {
   return {
     restrict: "A",
