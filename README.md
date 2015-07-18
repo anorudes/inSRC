@@ -12,7 +12,7 @@ bower install
 
 ## Start (with server)
 ```
-gulp --server
+gulp
 http://localhost:3000/
 ```
 

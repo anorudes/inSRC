@@ -17,7 +17,6 @@ var gulp	 		  = require('gulp'),
     shell = require('gulp-shell'),
     notify = require("gulp-notify");
 
-var server = !!$.util.env.server;
 var nw = !!$.util.env.nw;
 
 var root = 'client';
@@ -126,7 +125,7 @@ gulp.task('nw', nw && shell.task([
   'nw .'
 ]));
 
-gulp.task('dataServer', server && shell.task([
+gulp.task('dataServer', !server && shell.task([
   'node ./server/bin/www'
 ]));
 
