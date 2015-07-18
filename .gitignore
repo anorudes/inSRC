@@ -9,5 +9,7 @@ jspm_packages
 *.map
 *.scssc
 *.TMP
+styles.css
 data-cache
 data-cash
+gh-pages
