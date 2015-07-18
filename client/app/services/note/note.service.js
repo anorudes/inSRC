@@ -7,11 +7,17 @@ let NoteService = angular.module('NoteService', [])
     return Math.max.apply(Math, data.items.map(el => el.id));
   };
 
+  let getToday = () => {
+    let today = moment().format('DD/MM/YYYY');
+    return today;
+  };
+
   this.emptyItem = {
     id: "",
     title: "",
     tags: "",
     text: "",
+    date: ""
   };
 
   this.getAll = () => {
@@ -27,11 +33,14 @@ let NoteService = angular.module('NoteService', [])
   };
 
   this.update = (id, item) => {
+    item.date = getToday();
+    let index = data.items.indexOf(data.items.find(el => el.id == id));
     item.text = item.text.trim();
-    data.items[id] = angular.copy(item);
+    data.items[index] = angular.copy(item);
   };
 
   this.add = (item) => {
+    item.date = getToday();
     item.text = item.text.trim();
     item.id = getMaxId() + 1;
     data.items.push(item);

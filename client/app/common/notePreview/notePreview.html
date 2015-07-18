@@ -3,6 +3,7 @@
   <div class="preview__title">{{ vm.note.title }}</div>
   <div hljs class="preview__code" no-escape source="vm.note.text"></div>
   <div class="preview__tags">{{ vm.note.tags }}</div>
+  <div class="preview__date">{{ vm.note.date }}</div>
   <div class="preview__buttons">
     <!-- toDo -->
     <a class="preview__icon material-icons" ui-sref="edit({id: vm.note.id})">input</a>

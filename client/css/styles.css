@@ -232,6 +232,10 @@ main {
     margin-right: 15px; }
     .preview__icon:last-child {
       margin-right: 0; }
+  .preview__date {
+    position: absolute;
+    bottom: 0px;
+    color: #ccc; }
 
 .note-edit .btn-group {
   display: inline-block;

@@ -11,6 +11,7 @@ let appModule = angular.module('app', [
   'ui.router',
   'textAngular',
   'hljs',
+  'angularMoment',
   Services.name,
   Common.name,
   Components.name
