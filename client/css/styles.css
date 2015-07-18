@@ -1,7 +1,7 @@
 @import url(_libs/normalize.css);
 html {
   height: 100%;
-  font-size: 16px; }
+  font-size: 1rem; }
 
 body, main {
   position: relative;
@@ -175,7 +175,7 @@ main {
   border: 1px solid #9e9e9e;
   overflow: auto;
   outline: none;
-  padding: 15px;
+  padding: 5px;
   margin-top: 20px; }
 
 .note-edit .btn, .note-add .btn {
@@ -331,7 +331,7 @@ main {
   display: none !important; }
 
 .note-edit h1:after {
-  margin-bottom: 50px; }
+  margin-bottom: 31px; }
 
 .border-around {
   border: 1px solid #ccc; }
@@ -343,7 +343,7 @@ main {
   height: 50px;
   background: #ee6e73; }
   .navbar__title {
-    font-size: 20px;
+    font-size: 1.25rem;
     padding-top: 13px;
     display: block; }
     .navbar__title i {
@@ -356,7 +356,7 @@ main {
     width: 70px;
     text-align: center;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 0.875rem;
     height: 50px;
     line-height: 50px;
     margin-right: 10px; }

@@ -6,7 +6,7 @@
   height: $navbar-height;
   background: $bar-color;
   &__title {
-    font-size: 20px;
+    font-size: rem(20px);
     padding-top: 13px;
     display: block;
     i {
@@ -22,7 +22,7 @@
     width: 70px;
     text-align: center;
     cursor: pointer;
-    font-size: 14px;
+    font-size: rem(14px);
     height: $navbar-height;
     line-height: $navbar-height;
     margin-right: 10px;
