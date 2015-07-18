@@ -213,8 +213,8 @@ main {
       opacity: .2;
       margin-top: 10px; }
   .preview__code {
-    max-height: -webkit-calc(100% - 100px);
-    max-height: calc(100% - 100px);
+    max-height: -webkit-calc(100% - 115px);
+    max-height: calc(100% - 115px);
     overflow: auto; }
     .preview__code pre {
       margin: 0; }
@@ -225,7 +225,7 @@ main {
     margin-top: 10px; }
   .preview__buttons {
     position: absolute;
-    bottom: 0px;
+    bottom: -4px;
     right: 10px; }
   .preview__close:after {
     content: "X";
