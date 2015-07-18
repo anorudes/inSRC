@@ -2,11 +2,13 @@ class NoteEditController {
 	constructor(NoteService, $stateParams, $state){
     this.id = $stateParams.id;
     this.note = NoteService.getOne(this.id);
+    this.noteEdit = angular.copy(this.note);
     this.update = () => {
       if (!this.note.title) {
         return false;
       }
-      NoteService.update(this.id, this.note);
+      console.log(this.noteEdit);
+      NoteService.update(this.note, this.noteEdit);
       NoteService.saveData();
       $state.transitionTo('list');
     };

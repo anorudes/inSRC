@@ -18,7 +18,6 @@ class NoteListController {
     this.showPreview = (note) => {
       this.notePreview = note;
       this.notePreview.text = rhtmlspecialchars(this.notePreview.text);
-      console.log(this.notePreview);
     };
 	}
 }

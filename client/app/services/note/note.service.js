@@ -32,17 +32,18 @@ let NoteService = angular.module('NoteService', [])
     data.items.splice(data.items.indexOf(this.getOne(id)), 1);
   };
 
-  this.update = (id, item) => {
-    item.date = getToday();
-    let index = data.items.indexOf(data.items.find(el => el.id == id));
-    item.text = item.text.trim();
-    data.items[index] = angular.copy(item);
+  this.update = (note, noteEdit) => {
+    note.title = noteEdit.title;
+    note.text = noteEdit.text;
+    note.tags = noteEdit.tags;
+    note.date = getToday();
+    this.saveData();
   };
 
   this.add = (item) => {
-    item.date = getToday();
     item.text = item.text.trim();
     item.id = getMaxId() + 1;
+    item.date = getToday();
     data.items.push(item);
   };
 
