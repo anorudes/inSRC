@@ -19,7 +19,7 @@ let noteListModule = angular.module('noteList', ['NoteService'])
 .filter('searchByTags', function(){
   let searchByTags = (item, input) => {
     let noteTags = item.tags.split(',');
-    let searchTags = input.split(',');
+    let searchTags = input.split(' ');
     let found = 0;
     for (let searchTag of searchTags) {
       for (let noteTag of noteTags) {
@@ -33,9 +33,9 @@ let noteListModule = angular.module('noteList', ['NoteService'])
   };
   let searchByTitle = (item, input) => {
     let noteTitle = item.title.split(' ');
-    let searchTags = input.split(',');
+    let searchTitle = input.split(' ');
     let found = 0;
-    for (let searchTag of searchTags) {
+    for (let searchTag of searchTitle) {
       for (let noteTag of noteTitle) {
         if (noteTag.indexOf(searchTag) >= 0) {
           found += 1;
@@ -43,7 +43,7 @@ let noteListModule = angular.module('noteList', ['NoteService'])
         }
       }
     }
-    return found === searchTags.length;
+    return found === searchTitle.length;
   };
   return function(items, input = "", searchTags, searchTitle){
     return items.filter(function(item){
