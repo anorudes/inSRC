@@ -16,28 +16,28 @@ let noteListModule = angular.module('noteList', ['NoteService'])
 })
 .directive('noteList', noteListComponent)
 
-.filter('searchByTags', function(){
-  let searchByTags = (item, input) => {
-    let noteTags = item.tags.split(',');
-    let searchTags = input.split(' ');
+.filter('searchByKeywords', function(){
+  let searchByKeywords = (item, input) => {
+    let noteKeywords = item.keywords.split(',');
+    let searchKeywords = input.split(' ');
     let found = 0;
-    for (let searchTag of searchTags) {
-      for (let noteTag of noteTags) {
-        if (noteTag.indexOf(searchTag) >= 0) {
+    for (let searchKeyword of searchKeywords) {
+      for (let noteKeyword of noteKeywords) {
+        if (noteKeyword.indexOf(searchKeyword) >= 0) {
           found += 1;
           break;
         }
       }
     }
-    return found === searchTags.length;
+    return found === searchKeywords.length;
   };
   let searchByTitle = (item, input) => {
     let noteTitle = item.title.split(' ');
     let searchTitle = input.split(' ');
     let found = 0;
-    for (let searchTag of searchTitle) {
-      for (let noteTag of noteTitle) {
-        if (noteTag.indexOf(searchTag) >= 0) {
+    for (let searchT of searchTitle) {
+      for (let noteT of noteTitle) {
+        if (noteT.indexOf(searchT) >= 0) {
           found += 1;
           break;
         }
@@ -45,11 +45,11 @@ let noteListModule = angular.module('noteList', ['NoteService'])
     }
     return found === searchTitle.length;
   };
-  return function(items, input = "", searchTags, searchTitle){
+  return function(items, input = "", searchKeywords, searchTitle){
     return items.filter(function(item){
-      let foundTags = searchTags === true ? searchByTags(item, input) : false;
+      let foundKeywords = searchKeywords === true ? searchByKeywords(item, input) : false;
       let foundTitle = searchTitle === true ? searchByTitle(item, input) : false;
-      return foundTags || foundTitle;
+      return foundKeywords || foundTitle;
     });
   };
 });

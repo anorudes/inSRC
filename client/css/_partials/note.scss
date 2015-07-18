@@ -65,9 +65,9 @@
         display: block;
         padding-top: 5px;
       }
-      &__tags {
+      &__keywords {
         display: block;
-        color: $note-tags-color;
+        color: $note-keywords-color;
         font-size: 12px;
       }
       &__title {
@@ -107,7 +107,7 @@
   }
   .note {
     padding-bottom: 25px !important;
-    &__tags {
+    &__keywords {
       border-top: 1px solid rgba(255, 255, 255, .5);
       padding-top: 10px;
       margin-top: 10px;
@@ -244,8 +244,8 @@
       margin: 0;
     }
   }
-  &__tags {
-    color: $note-tags-color;
+  &__keywords {
+    color: $note-keywords-color;
     display: block;
     font-size: 12px;
     margin-top: 15px;
@@ -269,6 +269,7 @@
   &__icon {
     color: black;
     margin-right: 15px;
+    cursor: pointer;
     &:last-child {
       margin-right: 0;
     }

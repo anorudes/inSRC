@@ -5,8 +5,8 @@
                 <div class="row">
                 		<div class="options">
 	                    <p>
-	                        <input type="checkbox" id="sTags" value="tags" ng-model="searchTags"  ng-init="searchTags = true" />
-	                        <label for="sTags">Tags</label>
+	                        <input type="checkbox" id="sKeywords" value="keywords" ng-model="searchKeywords"  ng-init="searchKeywords = true" />
+	                        <label for="sKeywords">Keywords</label>
 	                    </p>
 	                    <p>
 	                        <input type="checkbox" id="sTitle" value="title" ng-model="searchTitle" />
@@ -25,11 +25,11 @@
 <section class="section-note-list" ng-class="{'show-preview': vm.notePreview}">
     <ul class="collection">
         <div class="col s12">
-            <li class="note-list collection-item" ng-repeat="note in vm.notes | orderBy:'-id' | searchByTags:searchText:searchTags:searchTitle" ng-click="vm.showPreview(note)">
+            <li class="note-list collection-item" ng-repeat="note in vm.notes | orderBy:'-id' | searchByKeywords:searchText:searchKeywords:searchTitle" ng-click="vm.showPreview(note)">
                 <div class="note-mini">
                     <span class="note-mini__title">{{ note.title }}</span>
                     <span class="note-mini__date">{{ note.date }}</span>
-                    <span class="note-mini__tags">{{ note.tags }}</span>
+                    <span class="note-mini__keywords">{{ note.keywords }}</span>
                 </div>
             </li>
         </div>

@@ -110,7 +110,7 @@ main {
       .section-note-list li .note-mini__text {
         display: block;
         padding-top: 5px; }
-      .section-note-list li .note-mini__tags {
+      .section-note-list li .note-mini__keywords {
         display: block;
         color: #BCBCBC;
         font-size: 12px; }
@@ -132,7 +132,7 @@ main {
 
 .section-note-show .note {
   padding-bottom: 25px !important; }
-  .section-note-show .note__tags {
+  .section-note-show .note__keywords {
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     padding-top: 10px;
     margin-top: 10px;
@@ -257,7 +257,7 @@ main {
     overflow: auto; }
     .preview__code pre {
       margin: 0; }
-  .preview__tags {
+  .preview__keywords {
     color: #BCBCBC;
     display: block;
     font-size: 12px;
@@ -277,7 +277,8 @@ main {
       top: -5px; }
   .preview__icon {
     color: black;
-    margin-right: 15px; }
+    margin-right: 15px;
+    cursor: pointer; }
     .preview__icon:last-child {
       margin-right: 0; }
   .preview__date {
