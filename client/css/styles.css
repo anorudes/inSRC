@@ -99,7 +99,7 @@ main {
         padding-top: 5px; }
       .section-note-list li .note-mini__tags {
         display: block;
-        opacity: .4;
+        color: #BCBCBC;
         font-size: 12px; }
       .section-note-list li .note-mini__title {
         font-size: 16px;
@@ -248,7 +248,7 @@ main {
     .preview__code pre {
       margin: 0; }
   .preview__tags {
-    opacity: .4;
+    color: #BCBCBC;
     display: block;
     font-size: 12px;
     margin-top: 10px; }

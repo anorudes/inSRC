@@ -3,10 +3,9 @@ soon...
 <br />
 
 ## Install
-<code>
-npm install<br />
-cd client<br />
+```
+npm install
+cd client
 bower install
-</code>
-
+```
 
