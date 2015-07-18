@@ -66,7 +66,7 @@ main {
       left: 12px; }
   .section-note-search .options {
     position: absolute;
-    right: 20px;
+    right: 15px;
     top: 17px;
     z-index: 100; }
   .section-note-search [type="checkbox"]:checked + label:before {
@@ -106,7 +106,7 @@ main {
         -ms-transition: all 0.2s ease;
         -moz-transition: all 0.2s ease;
         -webkit-transition: all 0.2s ease;
-        margin-right: 3px; }
+        margin-right: 5px; }
       .section-note-list li .note-mini__text {
         display: block;
         padding-top: 5px; }
@@ -336,6 +336,10 @@ main {
 .navbar {
   height: 50px;
   background: #ee6e73; }
+  .navbar .container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0px 25px; }
   .navbar__title {
     font-size: 1.25rem;
     padding-top: 13px;
@@ -345,7 +349,7 @@ main {
   .navbar__tabs {
     position: absolute;
     top: 0;
-    right: 0; }
+    right: 15px; }
   .navbar__tab {
     width: 70px;
     text-align: center;

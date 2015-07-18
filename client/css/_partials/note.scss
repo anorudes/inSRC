@@ -12,7 +12,7 @@
  }
  .options {
   position: absolute;
-  right: 20px;
+  right: 15px;
   top: 17px;
   z-index: 100;
  }
@@ -59,7 +59,7 @@
         color: $gray-color;
         float: right;
         @include transition-e(.2s);
-        margin-right: 3px;
+        margin-right: 5px;
       }
       &__text {
         display: block;

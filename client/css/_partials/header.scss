@@ -5,6 +5,11 @@
 .navbar {
   height: $navbar-height;
   background: $bar-color;
+  .container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0px 25px;
+  }
   &__title {
     font-size: rem(20px);
     padding-top: 13px;
@@ -16,7 +21,7 @@
   &__tabs {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 15px;
   }
   &__tab {
     width: 70px;
