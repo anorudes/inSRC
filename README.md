@@ -1,6 +1,5 @@
 # ITmemo (working title)
-soon...
-<br />
+![](http://anorudes.github.io/ITmemo/img.png)
 
 ## Install
 ```
