@@ -36,7 +36,7 @@
   margin-right: 10px;
  }
  .input-field label.active {
-  display: none;
+  opacity: 0;
  }
 }
 
@@ -52,27 +52,42 @@
     padding: 0;
     margin-bottom: 0;
     position: relative;
-  
     .note-mini {
       @include transition-e(.2s);
+      padding-left: 3px;
+      &__date {
+        opacity: .6;
+        float: right;
+        @include transition-e(.2s);
+        margin-right: 3px;
+      }
       &__text {
         display: block;
         padding-top: 5px;
       }
       &__tags {
+        display: block;
         opacity: .4;
         font-size: 12px;
       }
       &__title {
-        display: block;
         font-size: 16px;
         margin-bottom: 5px;
       }
-      max-width: calc(100% - 700px);
     }
     &:hover {
       .note-mini {
         transform: translateX(10px);
+        &__date {
+          transform: translateX(-10px);
+        }
+      }
+    }
+  }
+  &.show-preview {
+    .note-mini {
+      &__date {
+        opacity: 0;
       }
     }
   }
@@ -169,7 +184,7 @@
 
 .section-note-preview {
   position: fixed;
-  right: 60px;
+  right: 40px;
   background: white;
   top: 48%;
   transform: translate(0px, -50%);
@@ -240,6 +255,7 @@
     right: 10px;
   }
   &__close {
+    cursor: pointer;
     &:after {
       content: "X";
       font-size: 16px;

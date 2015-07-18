@@ -22,12 +22,13 @@
         </div>
     </div>
 </section>
-<section class="section-note-list">
+<section class="section-note-list" ng-class="{'show-preview': vm.notePreview}">
     <ul class="collection">
         <div class="col s12">
             <li class="note-list collection-item" ng-repeat="note in vm.notes | orderBy:'-id' | searchByTags:searchText:searchTags:searchTitle" ng-click="vm.showPreview(note)">
                 <div class="note-mini">
                     <span class="note-mini__title">{{ note.title }}</span>
+                    <span class="note-mini__date">{{ note.date }}</span>
                     <span class="note-mini__tags">{{ note.tags }}</span>
                 </div>
             </li>
