@@ -125,7 +125,7 @@ gulp.task('nw', nw && shell.task([
   'nw .'
 ]));
 
-gulp.task('dataServer', !server && shell.task([
+gulp.task('dataServer', !nw && shell.task([
   'node ./server/bin/www'
 ]));
 

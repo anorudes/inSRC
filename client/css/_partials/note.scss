@@ -6,6 +6,9 @@
  .input-field {
    width: 100%;
    margin-top: .5em;
+   label {
+    left: 12px;
+   }
  }
  .options {
   position: absolute;
@@ -35,9 +38,6 @@
   vertical-align: top;
   margin-right: 10px;
  }
- .input-field label.active {
-  opacity: 0;
- }
 }
 
 
@@ -46,7 +46,7 @@
 // ***************************************************************************
 
 .section-note-list {
-  margin-bottom: -20px;
+  margin: -30px 0px -20px 0px;
   li {
     cursor: pointer;
     padding: 0;
@@ -133,6 +133,9 @@
     margin: 0 auto !important;
     display: block;
     float: none;
+    .input-field {
+      margin-top: 0;
+    }
   }
 }
 
@@ -145,7 +148,7 @@
       background: #ccc;
       height: 1px;
       display: block;
-      margin: 10px 0px 35px 0px;
+      margin: 10px 0px 15px 0px;
     }
   }
   &__input {
@@ -157,6 +160,7 @@
     overflow: auto;
     outline: none;
     padding: 15px;
+    margin-top: 20px;
   }
   .btn {
     margin: 10px auto;

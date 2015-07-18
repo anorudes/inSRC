@@ -56,7 +56,6 @@ let NoteService = angular.module('NoteService', [])
     } else {
       res = await $http.get(serverURL + 'get');
     }
-    console.log(res.data);
     data.items = res.data;
     return data.items;
   };
