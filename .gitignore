@@ -5,7 +5,6 @@ bower_components
 jspm_packages
 .settings
 *.log
-dist/
 .sass-cache
 *.map
 *.scssc

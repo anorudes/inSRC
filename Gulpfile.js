@@ -122,6 +122,10 @@ gulp.task('component', function(){
 		.pipe(gulp.dest(destPath));
 });
 
+gulp.task('nw', nw && shell.task([
+  'nw .'
+]));
+
 gulp.task('dataServer', server && shell.task([
   'node ./server/bin/www'
 ]));
@@ -130,4 +134,4 @@ gulp.task('watch', function() {
     gulp.watch(['./client/css/**/*.scss'], ['sass']);
 });
 
-gulp.task('default', ['serve', 'sass', 'dataServer', 'jspm', 'watch'])
+gulp.task('default', ['serve', 'sass', 'dataServer', 'nw', 'watch'])

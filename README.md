@@ -5,6 +5,7 @@ soon...
 ## Install
 ```
 npm install
+jspm install
 cd client
 bower install
 ```
@@ -18,5 +19,4 @@ http://localhost:3000/
 ## Start (nw.js)
 ```
 gulp --nw
-nw .
 ```
