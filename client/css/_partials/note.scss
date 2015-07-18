@@ -77,10 +77,7 @@
     }
     &:hover {
       .note-mini {
-        transform: translateX(10px);
-        &__date {
-          transform: translateX(-10px);
-        }
+        padding-left: 10px;
       }
     }
   }
