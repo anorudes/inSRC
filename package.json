@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "angular-sanitize": "^1.4.3",
-    "bower": "^1.4.1"
+    "bower": "^1.4.1",
+    "gulp-notify": "^2.2.0"
   }
 }

@@ -12,7 +12,8 @@ var gulp	 		  = require('gulp'),
     sass        = require('gulp-sass'),
     minifyCss   = require('gulp-minify-css'),
     autoprefixer = require('gulp-autoprefixer'),
-    shell = require('gulp-shell');
+    shell = require('gulp-shell'),
+    notify = require("gulp-notify");
 
 var root = 'client';
 
