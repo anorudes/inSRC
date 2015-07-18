@@ -29,12 +29,14 @@
  }
  [type="checkbox"]:not(:checked)+label, [type="checkbox"]:checked+label {
   padding-left: 20px;
-
  }
  p {
   display: inline-block;
   vertical-align: top;
   margin-right: 10px;
+ }
+ .input-field label.active {
+  display: none;
  }
 }
 

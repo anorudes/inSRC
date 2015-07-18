@@ -65,6 +65,8 @@ main {
     display: inline-block;
     vertical-align: top;
     margin-right: 10px; }
+  .section-note-search .input-field label.active {
+    display: none; }
 
 .section-note-list {
   margin-bottom: -20px; }
