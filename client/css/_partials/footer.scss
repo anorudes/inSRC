@@ -7,13 +7,15 @@ footer.page-footer {
   bottom: 0;
   left: 0;
   width: 100%;
+  box-shadow: none;
   z-index: 100;
   .footer-copyright {
     height: 20px;
+    background: none;
   }
 }
 
 footer.page-footer {
-  padding-top: 0 !important;
+  padding-top: 0;
   background: $bar-color;
 }
