@@ -1,1 +1,11 @@
-[{"id":1,"title":"button","tags":"button","text":"<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=\"input-field col\"&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=\"note-edit__code\"&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div contenteditable ng-model=\"vm.note.text\"&gt;&lt;/div&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;</div>"}]
+[{
+    "id": 1,
+    "title": "button",
+    "tags": "btn",
+    "text": "<nav class=\"s-navbar navbar\">\n\t<div class=\"container\">\n    <div class=\"logo\">\n        <h1 class=\"navbar__title\">\n          <a ui-sref=\"list\">\n            <i class=\"fa fa-book\"></i>\n            itMemo\n          </a>\n        </h1>\n    </div>"
+}, {
+    "id": 1,
+    "title": "button2",
+    "tags": "btn2",
+    "text": "<nav class=\"s-navbar navbar\">\n\t<div class=\"container\">\n    <div class=\"logo\">\n        <h1 class=\"navbar__title\">\n          <a ui-sref=\"list\">\n            <i class=\"fa fa-book\"></i>\n            itMemo\n          </a>\n        </h1>\n    </div>"
+}]

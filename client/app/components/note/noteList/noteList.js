@@ -17,20 +17,39 @@ let noteListModule = angular.module('noteList', ['NoteService'])
 .directive('noteList', noteListComponent)
 
 .filter('searchByTags', function(){
-  return function(items, input = ""){
-    return items.filter(function(item){
-      let noteTags = item.tags.split(',');
-      let searchTags = input.split(',');
-      let found = 0;
-      for (let searchTag of searchTags) {
-        for (let noteTag of noteTags) {
-          if (noteTag.indexOf(searchTag) >= 0) {
-            found += 1;
-            break;
-          }
+  let searchByTags = (item, input) => {
+    let noteTags = item.tags.split(',');
+    let searchTags = input.split(',');
+    let found = 0;
+    for (let searchTag of searchTags) {
+      for (let noteTag of noteTags) {
+        if (noteTag.indexOf(searchTag) >= 0) {
+          found += 1;
+          break;
         }
       }
-      return found === searchTags.length;
+    }
+    return found === searchTags.length;
+  };
+  let searchByTitle = (item, input) => {
+    let noteTitle = item.title.split(' ');
+    let searchTags = input.split(',');
+    let found = 0;
+    for (let searchTag of searchTags) {
+      for (let noteTag of noteTitle) {
+        if (noteTag.indexOf(searchTag) >= 0) {
+          found += 1;
+          break;
+        }
+      }
+    }
+    return found === searchTags.length;
+  };
+  return function(items, input = "", searchTags, searchTitle){
+    return items.filter(function(item){
+      let foundTags = searchTags === true ? searchByTags(item, input) : false;
+      let foundTitle = searchTitle === true ? searchByTitle(item, input) : false;
+      return foundTags || foundTitle;
     });
   };
 });

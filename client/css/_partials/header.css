@@ -1,2 +1,2 @@
-.navbar__title{font-size:20px;padding-top:20px;display:block}.navbar__title i{margin-right:3px}.navbar__tabs{position:absolute;top:0;right:0}.navbar__tab{width:80px;text-align:center;cursor:pointer;font-size:14px}.navbar__tab i{margin-right:2px}
+.navbar{height:50px}.navbar__title{font-size:20px;padding-top:13px;display:block}.navbar__title i{margin-right:3px}.navbar__tabs{position:absolute;top:0;right:0}.navbar__tab{width:70px;text-align:center;cursor:pointer;font-size:14px;height:50px;line-height:50px;margin-right:10px}.navbar__tab:last-child{margin-right:0px}.navbar__tab i{margin-right:2px}
 /*# sourceMappingURL=header.css.map */

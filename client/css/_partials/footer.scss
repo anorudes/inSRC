@@ -2,12 +2,15 @@
 // Footer
 // ***************************************************************************
 
-.page-footer {
+footer.page-footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: 100;
+  .footer-copyright {
+    height: 20px;
+  }
 }
 
 footer.page-footer {
