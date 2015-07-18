@@ -54,7 +54,11 @@ let NoteService = angular.module('NoteService', [])
   };
 
   this.saveData = async () => {
-    return await $http.post(serverURL + 'update', {data: data.items});
+    if (nw) { /* node-webkit */
+      fs.writeFile('test', JSON.stringify(data.items));
+    } else {
+      return await $http.post(serverURL + 'update', {data: data.items});
+    }
   };
 
 

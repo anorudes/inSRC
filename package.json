@@ -1,7 +1,9 @@
 {
-  "name": "angular-webpack-starter",
+  "name": "ITmemo",
   "version": "0.0.1",
   "description": "starter",
+  "main": "index.html",
+  "chromium-args": "--data-path='./data-cache/'",
   "scripts": {
     "test": "karma start",
     "postinstall": "jspm install"
@@ -61,6 +63,21 @@
   "dependencies": {
     "angular-sanitize": "^1.4.3",
     "bower": "^1.4.1",
-    "gulp-notify": "^2.2.0"
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-util": "^3.0.6"
+  },
+  "webkit": {
+    "page-cache": false,
+    "plugin": false,
+    "java": false
+  },
+  "window": {
+    "toolbar": true,
+    "show": true,
+    "width": 1000,
+    "height": 700,
+    "resizable": false,
+    "icon": "./icon.png"
   }
 }

@@ -7,7 +7,7 @@ import Services from './services/services';
 import AppComponent from './app.component';
 
 let appModule = angular.module('app', [
-  'ngAnimate',
+  'ngAnimate',  
   'ui.router',
   'textAngular',
   'hljs',

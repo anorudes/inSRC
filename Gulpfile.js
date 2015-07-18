@@ -1,3 +1,5 @@
+var $ = require('gulp-load-plugins')();
+
 var gulp	 		  = require('gulp'),
 		path			  = require('path'),
 		jspm 				= require('jspm'),
@@ -14,6 +16,9 @@ var gulp	 		  = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     shell = require('gulp-shell'),
     notify = require("gulp-notify");
+
+var server = !!$.util.env.server;
+var nw = !!$.util.env.nw;
 
 var root = 'client';
 
@@ -117,7 +122,7 @@ gulp.task('component', function(){
 		.pipe(gulp.dest(destPath));
 });
 
-gulp.task('dataServer', shell.task([
+gulp.task('dataServer', server && shell.task([
   'node ./server/bin/www'
 ]));
 
@@ -125,4 +130,4 @@ gulp.task('watch', function() {
     gulp.watch(['./client/css/**/*.scss'], ['sass']);
 });
 
-gulp.task('default', ['serve', 'sass', 'dataServer', 'watch'])
+gulp.task('default', ['serve', 'sass', 'dataServer', 'jspm', 'watch'])
