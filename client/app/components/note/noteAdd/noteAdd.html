@@ -1,22 +1,22 @@
 <section class="section-note-add">
-    <div class="row note-edit">
+    <div class="row note-add">
         <form class="col">
-            <div class="input-field col">
+
+            <h1>Add note</h1>
+
+            <div class="input-field">
                 <input placeholder="" class="note-edit__input" ng-model="vm.note.title" type="text">
                 <label for="first_name">Title</label>
             </div>
-            <div class="input-field col">
+            <div class="input-field">
                 <input class="note-edit__input" ng-model="vm.note.tags" type="text">
                 <label for="last_name">Tags</label>
             </div>
-            <!-- <div class="input-field col">
-          <div class="note-edit__code" text-angular ng-model="vm.note.text" ta-text-editor-class="border-around" ta-html-editor-class="border-around"></div>
-         </div> -->
-            <div class="input-field col">
+            <div class="input-field">
                 <textarea class="note-edit__code" ng-model="vm.note.text"></textarea>
             </div>
             <div class="clear"></div>
-            <div class="input-field col">
+            <div class="input-field">
                 <button ng-click="vm.save()" class="btn waves-effect waves-light" type="submit" name="action">
                     <i class="material-icons left">done</i> Save
                 </button>

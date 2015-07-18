@@ -112,13 +112,25 @@
   .row .col {
     width: 61.5%;
     min-width: $note-width;
+    max-width: $note-max-width;
     margin: 0 auto !important;
     display: block;
     float: none;
   }
 }
 
-.note-edit {
+.note-edit, .note-add {
+  h1 {
+    display: block;
+    &:after {
+      content: "";
+      width: 100%;
+      background: #ccc;
+      height: 1px;
+      display: block;
+      margin: 10px 0px 35px 0px;
+    }
+  }
   &__input {
     padding: 0 0 0 15px;
   }
@@ -163,7 +175,7 @@
   max-width: 900px;
   min-width: 600px;
   height: 70%;
-  min-height: 400px;
+  min-height: $preview-min-height;
   padding: 20px;
   z-index: 100;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -209,7 +221,7 @@
     }
   }
   &__code {
-    max-height: calc(100% - 115px);
+    max-height: $preview-max-height;
     overflow: auto;
     pre {
       margin: 0;
@@ -254,7 +266,7 @@
 // fix editor
 // ***************************************************************************
 
-.note-edit {
+.note-edit, .note-add {
   .btn-group {
     display: inline-block;
     vertical-align: top;
@@ -283,6 +295,14 @@
   }
   #toolbarCC {
     display: none !important;
+  }
+}
+
+.note-edit {
+  h1 {
+    &:after {
+      margin-bottom: 50px;
+    }
   }
 }
 

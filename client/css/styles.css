@@ -118,21 +118,32 @@ main {
   .section-note-add .row .col, .section-note-edit .row .col {
     width: 61.5%;
     min-width: 500px;
+    max-width: 750px;
     margin: 0 auto !important;
     display: block;
     float: none; }
 
-.note-edit__input {
+.note-edit h1, .note-add h1 {
+  display: block; }
+  .note-edit h1:after, .note-add h1:after {
+    content: "";
+    width: 100%;
+    background: #ccc;
+    height: 1px;
+    display: block;
+    margin: 10px 0px 35px 0px; }
+
+.note-edit__input, .note-add__input {
   padding: 0 0 0 15px; }
 
-.note-edit__code {
+.note-edit__code, .note-add__code {
   height: 250px;
   border: 1px solid #9e9e9e;
   overflow: auto;
   outline: none;
   padding: 15px; }
 
-.note-edit .btn {
+.note-edit .btn, .note-add .btn {
   margin: 10px auto;
   height: 40px;
   line-height: 40px;
@@ -141,9 +152,9 @@ main {
   display: block;
   z-index: 10; }
 
-.note-edit .buttons {
+.note-edit .buttons, .note-add .buttons {
   text-align: center; }
-  .note-edit .buttons .btn {
+  .note-edit .buttons .btn, .note-add .buttons .btn {
     display: inline-block !important;
     margin: 10px 5px; }
 
@@ -244,11 +255,11 @@ main {
     bottom: 0px;
     color: #ccc; }
 
-.note-edit .btn-group {
+.note-edit .btn-group, .note-add .btn-group {
   display: inline-block;
   vertical-align: top; }
 
-.note-edit .btn-default {
+.note-edit .btn-default, .note-add .btn-default {
   display: inline-block;
   width: 22px;
   height: 22px;
@@ -269,19 +280,22 @@ main {
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(o);
   font-size: 10px; }
-  .note-edit .btn-default:hover {
+  .note-edit .btn-default:hover, .note-add .btn-default:hover {
     -webkit-filter: brightness(1.05);
     -moz-filter: brightness(1.05);
     -ms-filter: brightness(1.05);
     filter: brightness(1.05); }
-  .note-edit .btn-default i {
+  .note-edit .btn-default i, .note-add .btn-default i {
     font-size: 1em; }
 
-.note-edit #toolbarWC {
+.note-edit #toolbarWC, .note-add #toolbarWC {
   display: none !important; }
 
-.note-edit #toolbarCC {
+.note-edit #toolbarCC, .note-add #toolbarCC {
   display: none !important; }
+
+.note-edit h1:after {
+  margin-bottom: 50px; }
 
 .border-around {
   border: 1px solid #ccc; }
@@ -290,7 +304,8 @@ main {
   margin-top: 10px; }
 
 .navbar {
-  height: 50px; }
+  height: 50px;
+  background: #ee6e73; }
   .navbar__title {
     font-size: 20px;
     padding-top: 13px;
@@ -324,6 +339,10 @@ footer.page-footer {
     height: 20px; }
 
 footer.page-footer {
-  padding-top: 0 !important; }
+  padding-top: 0 !important;
+  background: #ee6e73; }
+
+.btn, .btn-large {
+  background-color: #26a69a; }
 
 /*# sourceMappingURL=styles.css.map */

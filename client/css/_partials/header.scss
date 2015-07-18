@@ -3,7 +3,8 @@
 // ***************************************************************************
 
 .navbar {
-  height: 50px;
+  height: $navbar-height;
+  background: $bar-color;
   &__title {
     font-size: 20px;
     padding-top: 13px;
@@ -22,8 +23,8 @@
     text-align: center;
     cursor: pointer;
     font-size: 14px;
-    height: 50px;
-    line-height: 50px;
+    height: $navbar-height;
+    line-height: $navbar-height;
     margin-right: 10px;
     &:last-child {
       margin-right: 0px;
