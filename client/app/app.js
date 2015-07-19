@@ -5,21 +5,22 @@ import Common from './common/common';
 import Components from './components/components';
 import Services from './services/services';
 import AppComponent from './app.component';
+import Config from './config/config';
 
 let appModule = angular.module('app', [
-  'ngAnimate',  
+  'ngAnimate',
   'ui.router',
   'textAngular',
   'hljs',
   'angularMoment',
   Services.name,
   Common.name,
-  Components.name
+  Components.name,
+  Config.name
 ])
 .config(function (hljsServiceProvider) {
   hljsServiceProvider.setOptions({
     tabReplace: '  ',
-    
   });
 })
 .directive('app', AppComponent);
