@@ -246,6 +246,10 @@ main {
     overflow: auto; }
     .preview__code pre {
       margin: 0; }
+    .preview__code code {
+      white-space: nowrap; }
+    .preview__code.word-wrap code {
+      white-space: pre-wrap; }
   .preview__keywords {
     color: #BCBCBC;
     display: block;

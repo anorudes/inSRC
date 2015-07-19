@@ -1,9 +1,14 @@
 class OptionsController {
 	constructor(ConfigService, $state){
+    let data = ConfigService.configData;
+
     this.schemes = ConfigService.schemes;
-    this.data = ConfigService.configData;
+    this.scheme = ConfigService.configData.scheme;
+    this.wordWrap = data.wordWrap;
     this.save = () => {
-      ConfigService.save(this.data);
+      data.scheme = this.scheme;
+      data.wordWrap = this.wordWrap;
+      ConfigService.save();
       $state.transitionTo('list');
     };
 	}

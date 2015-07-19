@@ -1,7 +1,7 @@
 <div class="preview">
   <div class="preview__close" ng-click="vm.close()"></div>
   <div class="preview__title">{{ vm.note.title }}</div>
-  <div hljs class="preview__code" no-escape source="vm.note.text"></div>
+  <div hljs class="preview__code" ng-class="{'word-wrap': vm.wordWrap}" no-escape source="vm.note.text"></div>
   <div class="preview__keywords">{{ vm.note.keywords }}</div>
   <div class="preview__date">{{ vm.note.date }}</div>
   <div class="preview__buttons">

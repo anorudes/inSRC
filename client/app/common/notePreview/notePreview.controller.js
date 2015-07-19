@@ -1,5 +1,6 @@
 class NotePreviewController {
-	constructor(NoteService){
+	constructor(NoteService, ConfigService){
+    this.wordWrap = ConfigService.configData.wordWrap;
     this.close = () => {
       this.note = false;
     };
@@ -10,5 +11,5 @@ class NotePreviewController {
     };
 	}
 }
-NotePreviewController.$inject = ['NoteService'];
+NotePreviewController.$inject = ['NoteService', 'ConfigService'];
 export default NotePreviewController;

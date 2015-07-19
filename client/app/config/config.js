@@ -72,20 +72,19 @@ let Config = angular.module('Config', [])
   this.configData = {};
   this.schemes = schemes;
 
-  this.style = () => {
+  let colorScheme = () => {
     /* inject code scheme style */
     let schemePath = schemesPath + this.configData.scheme;
     $("#scheme-css").html(`<link href="${schemePath}.css" rel="stylesheet">`);
   };
 
-  this.save = (data) => {
-    this.configData = data;
+  this.save = () => {
     if (nw) {
-      fs.writeFile(configPath, JSON.stringify(data));
+      fs.writeFile(configPath, JSON.stringify(this.configData));
     } else {
-      $http.post(serverURL + 'update', {data: data});
+      $http.post(serverURL + 'update', {data: this.configData});
     }
-    this.style();
+    colorScheme();
   };
   
   this.load = () => {
@@ -93,13 +92,13 @@ let Config = angular.module('Config', [])
     switch(nw) {
       case true:
         this.configData = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-        this.style();
+        colorScheme();
         defer.resolve();
       break;
       case false:
         $http.get(configPath).then((res) => {
           this.configData = res.data;
-          this.style();
+          colorScheme();
           defer.resolve();
         });
       break;
@@ -109,6 +108,11 @@ let Config = angular.module('Config', [])
 })
 .run(function(ConfigService) {
   ConfigService.load();
+  
+  /* fix materialize-css label */
+  $(document).on('click', '.input-field label', function() {
+    $(this).parent().find('input').focus();
+  });
 });
 
 export default Config;

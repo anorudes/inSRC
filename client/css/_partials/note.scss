@@ -224,6 +224,14 @@
     pre {
       margin: 0;
     }
+    code {
+      white-space: nowrap;
+    }
+    &.word-wrap {
+      code {
+        white-space: pre-wrap;
+      }
+    }
   }
   &__keywords {
     color: $note-keywords-color;

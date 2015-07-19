@@ -7,10 +7,16 @@
             <div class="input-field">
               <label class="label">Color scheme</label>
               <div class="select">
-                <select ng-model="vm.data.scheme" class="browser-default">
-                  <option value="{{scheme}}" ng-selected="vm.data.scheme === scheme" ng-repeat="scheme in vm.schemes">{{scheme}}</option>
+                <select ng-model="vm.scheme" class="browser-default">
+                  <option value="{{scheme}}" ng-selected="vm.scheme === scheme" ng-repeat="scheme in vm.schemes">{{scheme}}</option>
                 </select>
               </div>
+            </div>
+            <div class="input-field">
+              <p>
+                  <input id="word-wrap" type="checkbox" value="title" ng-model="vm.wordWrap" />
+                  <label for="word-wrap">Word wrap</label>
+              </p>
             </div>
             <div class="input-field">
               <div class="buttons-center">
