@@ -5,11 +5,12 @@ var path = require('path');
 var app = express();
 
 var dbPath = path.join(__dirname, 'db', 'data.json');
+var configPath = path.join(__dirname, '../client/', 'config.json');
 
 app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
-})); 
+}));
 
 // CORS
 app.use(function(req, res, next) {
@@ -40,6 +41,14 @@ app.post('/data/update', function (req, res) {
 	res.send();
 });
 
+app.post('/config/update', function (req, res) {
+  if (typeof req.body.data === 'undefined') {
+    res.status(400).send();
+    return;
+  }
+  fs.writeFile(configPath, JSON.stringify(req.body.data));
+  res.send();
+});
 
 var server = app.listen(4000, function () {
 
