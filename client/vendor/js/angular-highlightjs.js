@@ -9,23 +9,6 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
   module.exports = 'hljs';
 }
 
-function linkify(inputText) {
-    var replacedText, replacePattern1, replacePattern2, replacePattern3;
-
-    //URLs starting with http://, https://, or ftp://
-    replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
-    replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">$1</a>');
-
-    //URLs starting with "www." (without // before it, or it'd re-link the ones done above).
-    replacePattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    replacedText = replacedText.replace(replacePattern2, '$1<a href="http://$2" target="_blank">$2</a>');
-
-    //Change email addresses to mailto:: links.
-    replacePattern3 = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim;
-    replacedText = replacedText.replace(replacePattern3, '<a href="mailto:$1">$1</a>');
-    return replacedText;
-}
-
 (function (window, angular, undefined) {
 /*global angular*/
 
@@ -132,12 +115,15 @@ function HljsCtrl (hljsCache,   hljsService) {
       }
     }
 
-    /* added hyperlink */
+    /* hyperlink */
 
     res.value = res.value.replace('https:<span class="hljs-comment">//', 'https://');
     res.value = res.value.replace('http:<span class="hljs-comment">//', 'http://');
     res.value = linkify(res.value);
-    
+
+    /* bold */
+    res.value = res.value.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+
     _elm.html(res.value);
     // language as class on the <code> tag
     _elm.addClass(res.language);
@@ -403,3 +389,24 @@ ngModule
 .directive('include', includeDirFactory('include'));
 })(window, window.angular);
 
+
+// ***************************************************************************
+// link to <a href></a>
+// ***************************************************************************
+
+function linkify(inputText) {
+    var replacedText, replacePattern1, replacePattern2, replacePattern3;
+
+    //URLs starting with http://, https://, or ftp://
+    replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
+    replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">$1</a>');
+
+    //URLs starting with "www." (without // before it, or it'd re-link the ones done above).
+    replacePattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    replacedText = replacedText.replace(replacePattern2, '$1<a href="http://$2" target="_blank">$2</a>');
+
+    //Change email addresses to mailto:: links.
+    replacePattern3 = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim;
+    replacedText = replacedText.replace(replacePattern3, '<a href="mailto:$1">$1</a>');
+    return replacedText;
+}
