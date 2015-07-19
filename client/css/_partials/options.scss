@@ -1,0 +1,52 @@
+// ***************************************************************************
+// Options
+// ***************************************************************************
+.section-options {
+  label.label {
+    position: relative;
+    margin-bottom: 25px;
+    display: block;
+  }
+  select {
+    cursor: pointer;
+  }
+  .row .col {
+    width: 61.5%;
+    min-width: $note-width;
+    max-width: $note-max-width;
+    margin: 0 auto !important;
+    display: block;
+    float: none;
+    .input-field {
+      margin-top: 0;
+    }
+  }
+  .select{
+    position: relative;
+    select {
+      appearance: none;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      right: 15px;
+      top: 20px;
+      border-top: 7px solid black;
+      border-left: 7px solid transparent;
+      opacity: .3;
+      border-right: 7px solid transparent;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 63px;
+      top: 0;
+      border-top: -56px solid #eeeeee;
+      border-left: -56px solid transparent;
+      border-right: -56px solid transparent;
+    }
+  }
+}
+
+

@@ -137,17 +137,6 @@
 }
 
 .note-edit, .note-add {
-  h1 {
-    display: block;
-    &:after {
-      content: "";
-      width: 100%;
-      background: #ccc;
-      height: 1px;
-      display: block;
-      margin: 10px 0px 15px 0px;
-    }
-  }
   &__input {
     padding: 0 0 0 15px;
   }
@@ -159,20 +148,12 @@
     padding: 5px;
     margin-top: 20px;
   }
-  .btn {
-    margin: 10px auto;
-    height: 40px;
-    line-height: 40px;
-    position: relative;
-    padding-right: 40px;
-    display: block;
-    z-index: 10;
-  }
   .buttons {
     text-align: center;
     .btn {
       display: inline-block !important;
-      margin: 10px 5px;
+      margin-left: 10px;
+      margin-right: 10px;
     }
   }
 }
@@ -324,7 +305,6 @@
     }
   }
 }
-
 .border-around {
   border: 1px solid #ccc;
 }

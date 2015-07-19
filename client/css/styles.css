@@ -33,6 +33,16 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
   font-size: 0.75rem;
   opacity: .6; }
 
+.page-title h1 {
+  display: block; }
+  .page-title h1:after {
+    content: "";
+    width: 100%;
+    background: #ccc;
+    height: 1px;
+    display: block;
+    margin: 10px 0px 15px 0px; }
+
 main {
   position: relative;
   min-height: 265px; }
@@ -53,9 +63,6 @@ main {
 
 [ui-view].ng-leave-active {
   opacity: 0; }
-
-.s-navbar h1 {
-  margin-top: 0; }
 
 .section-note-search {
   margin: 10px 0px -70px 0px; }
@@ -151,16 +158,6 @@ main {
     .section-note-add .row .col .input-field, .section-note-edit .row .col .input-field {
       margin-top: 0; }
 
-.note-edit h1, .note-add h1 {
-  display: block; }
-  .note-edit h1:after, .note-add h1:after {
-    content: "";
-    width: 100%;
-    background: #ccc;
-    height: 1px;
-    display: block;
-    margin: 10px 0px 15px 0px; }
-
 .note-edit__input, .note-add__input {
   padding: 0 0 0 15px; }
 
@@ -172,20 +169,12 @@ main {
   padding: 5px;
   margin-top: 20px; }
 
-.note-edit .btn, .note-add .btn {
-  margin: 10px auto;
-  height: 40px;
-  line-height: 40px;
-  position: relative;
-  padding-right: 40px;
-  display: block;
-  z-index: 10; }
-
 .note-edit .buttons, .note-add .buttons {
   text-align: center; }
   .note-edit .buttons .btn, .note-add .buttons .btn {
     display: inline-block !important;
-    margin: 10px 5px; }
+    margin-left: 10px;
+    margin-right: 10px; }
 
 .section-note-preview {
   position: fixed;
@@ -352,17 +341,18 @@ main {
     top: 0;
     right: 15px; }
   .navbar__tab {
-    width: 70px;
+    min-width: 70px;
+    padding: 0px 12px;
     text-align: center;
     cursor: pointer;
     font-size: 0.875rem;
     height: 50px;
-    line-height: 50px;
-    margin-right: 10px; }
-    .navbar__tab:last-child {
-      margin-right: 0px; }
+    line-height: 50px; }
     .navbar__tab i {
       margin-right: 2px; }
+
+.s-navbar h1 {
+  margin-top: 0; }
 
 footer.page-footer {
   position: fixed;
@@ -382,5 +372,56 @@ footer.page-footer {
 
 .btn, .btn-large {
   background-color: #26a69a; }
+
+.buttons-center .btn {
+  margin: 20px auto;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  padding-right: 40px;
+  display: block;
+  z-index: 10; }
+
+.section-options label.label {
+  position: relative;
+  margin-bottom: 25px;
+  display: block; }
+
+.section-options select {
+  cursor: pointer; }
+
+.section-options .row .col {
+  width: 61.5%;
+  min-width: 500px;
+  max-width: 750px;
+  margin: 0 auto !important;
+  display: block;
+  float: none; }
+  .section-options .row .col .input-field {
+    margin-top: 0; }
+
+.section-options .select {
+  position: relative; }
+  .section-options .select select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+  .section-options .select:before {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    border-top: 7px solid black;
+    border-left: 7px solid transparent;
+    opacity: .3;
+    border-right: 7px solid transparent; }
+  .section-options .select:after {
+    content: '';
+    position: absolute;
+    left: 63px;
+    top: 0;
+    border-top: -56px solid #eeeeee;
+    border-left: -56px solid transparent;
+    border-right: -56px solid transparent; }
 
 /*# sourceMappingURL=styles.css.map */

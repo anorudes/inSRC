@@ -4,3 +4,13 @@
 .btn, .btn-large {
   background-color: $btn-color;
 }
+
+.buttons-center .btn {
+  margin: 20px auto;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  padding-right: 40px;
+  display: block;
+  z-index: 10;
+}

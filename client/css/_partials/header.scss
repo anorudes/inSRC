@@ -24,19 +24,22 @@
     right: 15px;
   }
   &__tab {
-    width: 70px;
+    min-width: 70px;
+    padding: 0px 12px;
     text-align: center;
     cursor: pointer;
     font-size: rem(14px);
     height: $navbar-height;
     line-height: $navbar-height;
-    margin-right: 10px;
-    &:last-child {
-      margin-right: 0px;
-    }
+  
     i {
       margin-right: 2px;
     }
   }
 }
 
+.s-navbar {
+  h1 {
+    margin-top: 0;
+  }
+}

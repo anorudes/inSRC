@@ -1,0 +1,24 @@
+<section class="section-options">
+    <div class="row">
+        <form class="col">
+            <span class="page-title">
+              <h1>Options</h1>
+            </span>
+            <div class="input-field">
+              <label class="label">Scheme</label>
+              <div class="select">
+                <select ng-model="vm.data.scheme" class="browser-default">
+                  <option value="{{scheme}}" ng-selected="vm.data.scheme === scheme" ng-repeat="scheme in vm.schemes">{{scheme}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-field">
+              <div class="buttons-center">
+                <button ng-click="vm.save()" class="btn btn-center waves-effect waves-light" type="submit" name="action">
+                    <i class="material-icons left">done</i> Save
+                </button>
+              </div>
+            </div>
+    </div>
+    </div>
+</section>

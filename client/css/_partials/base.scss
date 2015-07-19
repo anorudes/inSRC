@@ -47,3 +47,15 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
  font-size: rem(12px);
  opacity: .6;
 }
+
+.page-title h1 {
+  display: block;
+  &:after {
+    content: "";
+    width: 100%;
+    background: #ccc;
+    height: 1px;
+    display: block;
+    margin: 10px 0px 15px 0px;
+  }
+}

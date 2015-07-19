@@ -119,7 +119,6 @@ function HljsCtrl (hljsCache,   hljsService) {
 
     res.value = res.value.split('https:<span class="hljs-comment">').join('https:');
     res.value = res.value.split('http:<span class="hljs-comment">').join('http:');
-    console.log(res.value);
     res.value = convertToLinks(res.value);
     
 

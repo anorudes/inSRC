@@ -2,7 +2,9 @@
     <div class="row note-add">
         <form class="col">
 
-            <h1>Add note</h1>
+            <span class="page-title">
+                <h1>Add note</h1>
+            </span>
 
             <div class="input-field">
                 <input placeholder="" class="note-edit__input" ng-model="vm.note.title" type="text">
@@ -17,9 +19,11 @@
             </div>
             <div class="clear"></div>
             <div class="input-field">
-                <button ng-click="vm.save()" class="btn waves-effect waves-light" type="submit" name="action">
-                    <i class="material-icons left">done</i> Save
-                </button>
+                <div class="buttons-center">
+                    <button ng-click="vm.save()" class="btn waves-effect waves-light" type="submit" name="action">
+                        <i class="material-icons left">done</i> Save
+                    </button>
+                </div>
             </div>
     </div>
     </div>

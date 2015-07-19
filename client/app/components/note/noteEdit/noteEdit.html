@@ -1,8 +1,9 @@
 <section class="section-note-edit">
     <div class="row note-edit">
         <form class="col">
-            
-            <h1>Edit note</h1>
+            <span class="page-title">
+                <h1>Edit note</h1>
+            </span>
             <div class="input-field">
                 <input placeholder="" class="note-edit__input" ng-model="vm.noteEdit.title" type="text">
                 <label for="first_name" class="active">Title</label>
@@ -15,7 +16,7 @@
                 <textarea class="note-edit__code" ng-model="vm.noteEdit.text"></textarea>
             </div>
             <div class="input-field">
-                <div class="buttons">
+                <div class="buttons buttons-center">
                     <button ng-click="vm.update()" class="btn waves-effect waves-light" type="submit" name="action">
                         <i class="material-icons left">done</i> Save
                     </button>

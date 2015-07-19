@@ -7,7 +7,6 @@ class NoteEditController {
       if (!this.note.title) {
         return false;
       }
-      console.log(this.noteEdit);
       NoteService.update(this.note, this.noteEdit);
       NoteService.saveData();
       $state.transitionTo('list');
