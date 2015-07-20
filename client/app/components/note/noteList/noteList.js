@@ -15,7 +15,13 @@ let noteListModule = angular.module('noteList', ['NoteService'])
   $urlRouterProvider.otherwise('list');
 })
 .directive('noteList', noteListComponent)
-
+.factory('userFilter', [() => {
+    return {
+      searchKeywords: true,
+      searchTitle: false,
+      searchText: ""
+    };
+}])
 .filter('searchByKeywords', function(){
   let searchByKeywords = (item, input) => {
     let noteKeywords = item.keywords.split(',');

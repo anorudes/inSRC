@@ -105,14 +105,6 @@ let Config = angular.module('Config', [])
     }
     return defer.promise;
   };
-})
-.run(function(ConfigService) {
-  ConfigService.load();
-  
-  /* fix materialize-css label */
-  $(document).on('click', '.input-field label', function() {
-    $(this).parent().find('input').focus();
-  });
 });
 
 export default Config;

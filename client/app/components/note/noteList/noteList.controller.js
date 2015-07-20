@@ -12,7 +12,8 @@ let rhtmlspecialchars = (str) => {
 };
 
 class NoteListController {
-	constructor(NoteService){
+	constructor(NoteService, userFilter){
+    this.userFilter = userFilter;
 		this.notes = NoteService.getAll();
     this.notePreview = false;
     this.showPreview = (note) => {
@@ -22,6 +23,6 @@ class NoteListController {
 	}
 }
 
-NoteListController.$inject = ['NoteService'];
+NoteListController.$inject = ['NoteService', 'userFilter'];
 
 export default NoteListController;

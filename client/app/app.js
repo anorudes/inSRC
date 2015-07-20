@@ -23,13 +23,39 @@ let appModule = angular.module('app', [
     tabReplace: '  ',
   });
 })
-.directive('app', AppComponent);
+.directive('app', AppComponent)
+.run(function(ConfigService, $rootScope, $timeout) {
+  /* load config */
+  ConfigService.load();
 
-/*
- * As we are using ES6 with Angular 1.x we can't use ng-app directive
- * to bootstrap the application as modules are loaded asynchronously.
- * Instead, we need to bootstrap the application manually
- */
+  /* fix materialize-css label */
+  $(document).on('click', '.input-field label', function() {
+    $(this).parent().find('input').focus();
+  });
+  
+  // ***************************************************************************
+  // save scroll for list page
+  // ***************************************************************************
+  /* ToDo */
+  let listScrollY = 0;
+  $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+    if (fromState.name === 'list') {
+      listScrollY = $(window).scrollTop();
+    }
+  });
+  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+    if (toState.name === 'list') {
+      $timeout(function() {
+        window.scrollTo(0, listScrollY);
+        let searchText = document.getElementById('searchText');
+        searchText.nextSibling.nextSibling.className = "";
+        if (searchText.value != '') {
+          searchText.nextSibling.nextSibling.className = "active";
+        }
+      });
+    }
+  });
+});
 
 angular.element(document).ready(()=> {
   angular.bootstrap(document, [appModule.name]), {
