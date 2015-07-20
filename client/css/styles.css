@@ -93,7 +93,8 @@ main {
     margin-right: 10px; }
 
 .section-note-list {
-  margin: -30px 0px -20px 0px; }
+  margin: -30px 0px -20px 0px;
+  padding-top: 0; }
   .section-note-list li {
     cursor: pointer;
     padding: 0;
@@ -338,7 +339,9 @@ main {
   left: 0;
   width: 100%;
   z-index: 1000;
-  top: 0; }
+  top: 0;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
   .navbar .container {
     max-width: 100%;
     width: 100%;
