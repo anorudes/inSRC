@@ -247,7 +247,7 @@ main {
     .preview__code pre {
       margin: 0; }
     .preview__code code {
-      white-space: nowrap; }
+      white-space: pre; }
     .preview__code.word-wrap code {
       white-space: pre-wrap; }
   .preview__keywords {
