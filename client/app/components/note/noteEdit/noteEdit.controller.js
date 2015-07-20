@@ -5,8 +5,8 @@ class NoteEditController {
     this.note = NoteService.getOne(this.id);
     this.noteEdit = angular.copy(this.note);
 
-    let setFocus = () => {
-      $window.document.getElementById('note-code').focus();
+    this.setFocus = (n) => {
+      $window.document.getElementById('field-' + n).focus();
     };
 
     this.update = () => {
@@ -23,7 +23,7 @@ class NoteEditController {
       $state.transitionTo('list');
     };
 
-    setFocus();
+    this.setFocus(1);
 	}
 }
 

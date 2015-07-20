@@ -1,30 +1,31 @@
 <section class="section-note-edit">
     <div class="row note-edit">
-        <form class="col" ng-submit="vm.update()">
+        <div class="col">
             <span class="page-title">
                 <h1>Edit note</h1>
             </span>
             <div class="input-field">
-                <input placeholder="" class="note-edit__input" ng-model="vm.noteEdit.title" type="text">
+                <input placeholder="" class="note-edit__input" ng-model="vm.noteEdit.title" type="text" id="field-1" ng-keyup="$event.keyCode == 13 && vm.setFocus(2)">
                 <label for="first_name" class="active">Title</label>
             </div>
             <div class="input-field">
-                <input class="note-edit__input" ng-model="vm.noteEdit.keywords" type="text">
+                <input class="note-edit__input" ng-model="vm.noteEdit.keywords" type="text" id="field-2" ng-keyup="$event.keyCode == 13 && vm.setFocus(3)">
                 <label for="last_name" class="active">Keywords</label>
             </div>
             <div class="input-field">
-                <textarea id="note-code" class="note-edit__code" ng-model="vm.noteEdit.text" ng-class="{'word-wrap': vm.wordWrap}"></textarea>
+                <textarea class="note-edit__code" ng-model="vm.noteEdit.text" ng-class="{'word-wrap': vm.wordWrap}" id="field-3"></textarea>
             </div>
             <div class="input-field">
                 <div class="buttons buttons-center">
-                    <button ng-click="vm.update()" class="btn waves-effect waves-light" type="submit" name="action">
+                    <button ng-click="vm.update2()" class="btn waves-effect waves-light" name="action">
                         <i class="material-icons left">done</i> Save
                     </button>
-                    <button ng-confirm-click="Would you like to delete?" confirmed-click="vm.delete()" class="btn waves-effect waves-light" type="submit" name="action">
+                    <button ng-confirm-click="Would you like to delete?" confirmed-click="vm.delete()" class="btn waves-effect waves-light">
                         <i class="material-icons left">delete</i> Delete
                     </button>
                 </div>
             </div>
+        </div>
     </div>
     </div>
 </section>

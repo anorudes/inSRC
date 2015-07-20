@@ -5,8 +5,8 @@ class NoteAddController {
       this.note = angular.copy(NoteService.emptyItem);
     };
 
-    let setFocus = () => {
-      $window.document.getElementById('note-title').focus();
+    this.setFocus = (n) => {
+      $window.document.getElementById('field-' + n).focus();
     };
 
 		this.save = () => {
@@ -20,7 +20,7 @@ class NoteAddController {
       $state.transitionTo('list');
     }
     this._resetForm();
-    setFocus();
+    this.setFocus(1);
 	}
 }
 
