@@ -5,7 +5,7 @@ import Common from './common/common';
 import Components from './components/components';
 import Services from './services/services';
 import AppComponent from './app.component';
-import Config from './config/config';
+import Init from './init';
 
 let appModule = angular.module('app', [
   'ngAnimate',
@@ -16,46 +16,14 @@ let appModule = angular.module('app', [
   Services.name,
   Common.name,
   Components.name,
-  Config.name
+  Init.name
 ])
 .config(function (hljsServiceProvider) {
   hljsServiceProvider.setOptions({
     tabReplace: '  ',
   });
 })
-.directive('app', AppComponent)
-.run(function(ConfigService, $rootScope, $timeout) {
-  /* load config */
-  ConfigService.load();
-
-  /* fix materialize-css label */
-  $(document).on('click', '.input-field label', function() {
-    $(this).parent().find('input').focus();
-  });
-  
-  // ***************************************************************************
-  // save scroll for list page
-  // ***************************************************************************
-  /* ToDo */
-  let listScrollY = 0;
-  $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-    if (fromState.name === 'list') {
-      listScrollY = $(window).scrollTop();
-    }
-  });
-  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-    if (toState.name === 'list') {
-      $timeout(function() {
-        window.scrollTo(0, listScrollY);
-        let searchText = document.getElementById('searchText');
-        searchText.nextSibling.nextSibling.className = "";
-        if (searchText.value != '') {
-          searchText.nextSibling.nextSibling.className = "active";
-        }
-      });
-    }
-  });
-});
+.directive('app', AppComponent);
 
 angular.element(document).ready(()=> {
   angular.bootstrap(document, [appModule.name]), {

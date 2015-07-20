@@ -64,7 +64,7 @@ let schemes = [
   'zenburn'
 ];
 
-let Config = angular.module('Config', [])
+let Init = angular.module('Init', [])
 .service('ConfigService', function($http, $q) {
   const serverURL = 'http://127.0.0.1:4000/config/';
   const configPath = nw ? "client/config.json" : "../../config.json";
@@ -105,6 +105,38 @@ let Config = angular.module('Config', [])
     }
     return defer.promise;
   };
+})
+.run(function(ConfigService, $rootScope, $timeout) {
+  /* load config */
+  ConfigService.load();
+
+  /* fix materialize-css label */
+  $(document).on('click', '.input-field label', function() {
+    $(this).parent().find('input').focus();
+  });
+  
+  // ***************************************************************************
+  // save scroll for list page
+  // ***************************************************************************
+  /* ToDo */
+  let listScrollY = 0;
+  $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+    if (fromState.name === 'list') {
+      listScrollY = $(window).scrollTop();
+    }
+  });
+  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+    if (toState.name === 'list') {
+      $timeout(function() {
+        window.scrollTo(0, listScrollY);
+        let searchText = document.getElementById('searchText');
+        searchText.nextSibling.nextSibling.className = "";
+        if (searchText.value != '') {
+          searchText.nextSibling.nextSibling.className = "active";
+        }
+      });
+    }
+  });
 });
 
-export default Config;
+export default Init;
