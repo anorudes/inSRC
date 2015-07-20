@@ -14,6 +14,10 @@ let NoteService = angular.module('NoteService', [])
     return today;
   };
 
+  let filter = (text) => {
+    return text;
+  };
+
   this.emptyItem = {
     id: "",
     title: "",
@@ -36,7 +40,7 @@ let NoteService = angular.module('NoteService', [])
 
   this.update = (note, noteEdit) => {
     note.title = noteEdit.title;
-    note.text = noteEdit.text;
+    note.text = filter(noteEdit.text);
     note.keywords = noteEdit.keywords;
     note.date = getToday();
     this.saveData();

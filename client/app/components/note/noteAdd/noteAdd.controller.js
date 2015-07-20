@@ -1,9 +1,13 @@
 class NoteAddController {
-	constructor(NoteService, $state, ConfigService){
+	constructor($state, $window, NoteService, ConfigService){
     this.wordWrap = ConfigService.configData.wordWrap;
     this._resetForm = () => {
       this.note = angular.copy(NoteService.emptyItem);
-    }
+    };
+
+    let setFocus = () => {
+      $window.document.getElementById('note-title').focus();
+    };
 
 		this.save = () => {
       if (!this.note.title) {
@@ -16,9 +20,10 @@ class NoteAddController {
       $state.transitionTo('list');
     }
     this._resetForm();
+    setFocus();
 	}
 }
 
-NoteAddController.$inject = ['NoteService', '$state', 'ConfigService'];
+NoteAddController.$inject = ['$state', '$window', 'NoteService', 'ConfigService'];
 
 export default NoteAddController;

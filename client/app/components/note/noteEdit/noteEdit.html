@@ -1,6 +1,6 @@
 <section class="section-note-edit">
     <div class="row note-edit">
-        <form class="col">
+        <form class="col" ng-submit="vm.update()">
             <span class="page-title">
                 <h1>Edit note</h1>
             </span>
@@ -13,7 +13,7 @@
                 <label for="last_name" class="active">Keywords</label>
             </div>
             <div class="input-field">
-                <textarea class="note-edit__code" ng-model="vm.noteEdit.text" ng-class="{'word-wrap': vm.wordWrap}"></textarea>
+                <textarea id="note-code" class="note-edit__code" ng-model="vm.noteEdit.text" ng-class="{'word-wrap': vm.wordWrap}"></textarea>
             </div>
             <div class="input-field">
                 <div class="buttons buttons-center">

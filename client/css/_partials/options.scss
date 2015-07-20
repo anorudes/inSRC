@@ -23,6 +23,7 @@
   }
   .select{
     position: relative;
+    margin-bottom: 5px;
     select {
       appearance: none;
     }
@@ -46,6 +47,9 @@
       border-left: -56px solid transparent;
       border-right: -56px solid transparent;
     }
+  }
+  .buttons-center {
+    padding-top: 5px;
   }
 }
 

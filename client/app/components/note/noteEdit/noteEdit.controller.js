@@ -1,9 +1,14 @@
 class NoteEditController {
-	constructor(NoteService, $stateParams, $state, ConfigService){
+	constructor($stateParams, $state, $window, NoteService, ConfigService){
     this.wordWrap = ConfigService.configData.wordWrap;
     this.id = $stateParams.id;
     this.note = NoteService.getOne(this.id);
     this.noteEdit = angular.copy(this.note);
+
+    let setFocus = () => {
+      $window.document.getElementById('note-code').focus();
+    };
+
     this.update = () => {
       if (!this.note.title) {
         return false;
@@ -17,9 +22,11 @@ class NoteEditController {
       NoteService.saveData();
       $state.transitionTo('list');
     };
+
+    setFocus();
 	}
 }
 
-NoteEditController.$inject = ['NoteService', '$stateParams', '$state', 'ConfigService'];
+NoteEditController.$inject = ['$stateParams', '$state', '$window', 'NoteService', 'ConfigService'];
 
 export default NoteEditController;

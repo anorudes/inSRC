@@ -408,7 +408,8 @@ footer.page-footer {
     margin-top: 0; }
 
 .section-options .select {
-  position: relative; }
+  position: relative;
+  margin-bottom: 5px; }
   .section-options .select select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -430,5 +431,8 @@ footer.page-footer {
     border-top: -56px solid #eeeeee;
     border-left: -56px solid transparent;
     border-right: -56px solid transparent; }
+
+.section-options .buttons-center {
+  padding-top: 5px; }
 
 /*# sourceMappingURL=styles.css.map */
