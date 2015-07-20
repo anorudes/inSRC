@@ -1,5 +1,6 @@
 class NoteAddController {
-	constructor(NoteService, $state){
+	constructor(NoteService, $state, ConfigService){
+    this.wordWrap = ConfigService.configData.wordWrap;
     this._resetForm = () => {
       this.note = angular.copy(NoteService.emptyItem);
     }
@@ -18,6 +19,6 @@ class NoteAddController {
 	}
 }
 
-NoteAddController.$inject = ['NoteService', '$state'];
+NoteAddController.$inject = ['NoteService', '$state', 'ConfigService'];
 
 export default NoteAddController;

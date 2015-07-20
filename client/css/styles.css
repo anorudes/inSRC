@@ -167,7 +167,10 @@ main {
   overflow: auto;
   outline: none;
   padding: 5px;
-  margin-top: 20px; }
+  margin-top: 20px;
+  white-space: nowrap; }
+  .note-edit__code.word-wrap, .note-add__code.word-wrap {
+    white-space: normal; }
 
 .note-edit .buttons, .note-add .buttons {
   text-align: center; }

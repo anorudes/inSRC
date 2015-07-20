@@ -1,5 +1,6 @@
 class NoteEditController {
-	constructor(NoteService, $stateParams, $state){
+	constructor(NoteService, $stateParams, $state, ConfigService){
+    this.wordWrap = ConfigService.configData.wordWrap;
     this.id = $stateParams.id;
     this.note = NoteService.getOne(this.id);
     this.noteEdit = angular.copy(this.note);
@@ -19,6 +20,6 @@ class NoteEditController {
 	}
 }
 
-NoteEditController.$inject = ['NoteService', '$stateParams', '$state'];
+NoteEditController.$inject = ['NoteService', '$stateParams', '$state', 'ConfigService'];
 
 export default NoteEditController;
