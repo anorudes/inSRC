@@ -3,5 +3,6 @@
     "wordWrap": true,
     "hotkeyList": "Alt+Shift+Z",
     "hotkeyAdd": "Alt+Shift+X",
-    "tray": true
+    "tray": true,
+    "minimizeOnStart": false
 }

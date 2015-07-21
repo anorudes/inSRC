@@ -114,11 +114,12 @@ let Init = angular.module('Init', [])
 .run(function(ConfigService, $rootScope, $timeout, $state) {
   /* load config */
   ConfigService.load();
-
+  let configData = ConfigService.configData;
   if (nw) {
-    ConfigService.configData.tray && tray($state);
+    configData.tray && tray($state);
     hotkeys(ConfigService, $state);
     scroll($rootScope, $timeout);
+    configData.minimizeOnStart && win.minimize();
   }
 
   /* fix materialize-css label */

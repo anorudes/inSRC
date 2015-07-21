@@ -1,4 +1,13 @@
 export function tray($state) {
+  let enableClose = false;
+  win.on('close', function() {
+    if (enableClose) {
+      gui.App.quit();
+    } else {
+      win.minimize();
+    }
+  });
+
   win.on('minimize', function() {
     this.hide();
     let tray = new gui.Tray({ icon: 'icon.png' });
@@ -21,6 +30,7 @@ export function tray($state) {
       showWindow();
     }}));
     menu.append(new gui.MenuItem({ type: 'checkbox', label: 'Exit', click: function() {
+      enableClose = true;
       win.close();
     }}));
     tray.menu = menu;
