@@ -8,24 +8,24 @@ import AppComponent from './app.component';
 import Init from './init';
 
 let appModule = angular.module('app', [
-  'ngAnimate',
-  'ui.router',
-  'textAngular',
-  'hljs',
-  'angularMoment',
-  Services.name,
-  Common.name,
-  Components.name,
-  Init.name
-])
-.config(function (hljsServiceProvider) {
-  hljsServiceProvider.setOptions({
-    tabReplace: '  ',
-  });
-})
-.directive('app', AppComponent);
+    'ngAnimate',
+    'ui.router',
+    'textAngular',
+    'hljs',
+    'angularMoment',
+    Services.name,
+    Common.name,
+    Components.name,
+    Init.name
+  ])
+  .config(function(hljsServiceProvider) {
+    hljsServiceProvider.setOptions({
+      tabReplace: '  ',
+    });
+  })
+  .directive('app', AppComponent);
 
-angular.element(document).ready(()=> {
+angular.element(document).ready(() => {
   angular.bootstrap(document, [appModule.name]), {
     strictDi: true
   }

@@ -1,7 +1,7 @@
 class HomeController {
-	constructor(){
+  constructor() {
     this.name = 'hello';
-	}
+  }
 }
 
 

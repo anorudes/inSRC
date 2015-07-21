@@ -2,7 +2,7 @@ import 'angular-ui-router';
 import optionsComponent from './options.component';
 
 let optionsModule = angular.module('options', [])
-.config(($stateProvider)=>{
+.config(($stateProvider) => {
   $stateProvider
     .state('options', {
       url: '/options',

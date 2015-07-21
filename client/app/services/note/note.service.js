@@ -3,7 +3,9 @@ let NoteService = angular.module('NoteService', [])
   const serverURL = 'http://127.0.0.1:4000/data/';
   const dbFile = 'server/db/data.json';
 
-  let data = {items: []};
+  let data = {
+    items: []
+  };
 
   let getMaxId = () => {
     return Math.max.apply(Math, data.items.map(el => el.id));
@@ -53,8 +55,10 @@ let NoteService = angular.module('NoteService', [])
     data.items.push(item);
   };
 
-  this.resolveData = async () => {
-    let res = { data: "" }
+  this.resolveData = async() => {
+    let res = {
+      data: ""
+    }
     if (nw) { /* node-webkit */
       res.data = JSON.parse(fs.readFileSync(dbFile, 'utf8'));
     } else {
@@ -64,15 +68,15 @@ let NoteService = angular.module('NoteService', [])
     return data.items;
   };
 
-  this.saveData = async () => {
+  this.saveData = async() => {
     if (nw) { /* node-webkit */
       fs.writeFile(dbFile, JSON.stringify(data.items));
     } else {
-      return await $http.post(serverURL + 'update', {data: data.items});
+      return await $http.post(serverURL + 'update', {
+        data: data.items
+      });
     }
   };
-
-
 });
 
 export default NoteService;

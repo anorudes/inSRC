@@ -2,7 +2,7 @@ import 'angular-ui-router';
 import noteAddComponent from './noteAdd.component';
 
 let noteAddModule = angular.module('noteAdd', [])
-.config(($stateProvider)=>{
+.config(($stateProvider) => {
   $stateProvider
     .state('add', {
       url: '/add',

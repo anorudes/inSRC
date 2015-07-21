@@ -2,27 +2,26 @@ import 'angular-ui-router';
 import noteListComponent from './noteList.component';
 
 let noteListModule = angular.module('noteList', ['NoteService'])
-
-.config(($stateProvider, $urlRouterProvider)=>{
-	$stateProvider
-		.state('list', {
-			url: '/list',
-			template: '<note-list></note-list>',
-      resolve: {
-        notes: (NoteService) => NoteService.getAll().length || NoteService.resolveData()
-      }
-		});
-  $urlRouterProvider.otherwise('list');
-})
+.config(($stateProvider, $urlRouterProvider) => {
+    $stateProvider
+      .state('list', {
+        url: '/list',
+        template: '<note-list></note-list>',
+        resolve: {
+          notes: (NoteService) => NoteService.getAll().length || NoteService.resolveData()
+        }
+      });
+    $urlRouterProvider.otherwise('list');
+  })
 .directive('noteList', noteListComponent)
 .factory('userFilter', [() => {
-    return {
-      searchKeywords: true,
-      searchTitle: false,
-      searchText: ""
-    };
+  return {
+    searchKeywords: true,
+    searchTitle: false,
+    searchText: ""
+  };
 }])
-.filter('searchByKeywords', function(){
+.filter('searchByKeywords', function() {
   let searchByKeywords = (item, input) => {
     let noteKeywords = item.keywords.split(',');
     let searchKeywords = input.split(' ');
@@ -51,15 +50,14 @@ let noteListModule = angular.module('noteList', ['NoteService'])
     }
     return found === searchTitle.length;
   };
-  return function(items, input = "", searchKeywords, searchTitle){
-    return items.filter(function(item){
+  return function(items, input = "", searchKeywords, searchTitle) {
+    return items.filter(function(item) {
       let foundKeywords = searchKeywords === true ? searchByKeywords(item, input) : false;
       let foundTitle = searchTitle === true ? searchByTitle(item, input) : false;
       return foundKeywords || foundTitle;
     });
   };
 });
-
 
 
 export default noteListModule;

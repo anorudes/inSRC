@@ -1,5 +1,5 @@
 class OptionsController {
-	constructor(ConfigService, $state){
+  constructor(ConfigService, $state) {
     let data = ConfigService.configData;
 
     this.schemes = ConfigService.schemes;
@@ -11,7 +11,7 @@ class OptionsController {
       ConfigService.save();
       $state.transitionTo('list');
     };
-	}
+  }
 }
 
 OptionsController.$inject = ['ConfigService', '$state'];

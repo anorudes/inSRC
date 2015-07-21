@@ -1,5 +1,5 @@
 class NoteAddController {
-	constructor($state, $window, NoteService, ConfigService){
+  constructor($state, $window, NoteService, ConfigService) {
     this.wordWrap = ConfigService.configData.wordWrap;
     this._resetForm = () => {
       this.note = angular.copy(NoteService.emptyItem);
@@ -9,7 +9,7 @@ class NoteAddController {
       $window.document.getElementById('field-' + n).focus();
     };
 
-		this.save = () => {
+    this.save = () => {
       if (!this.note.title) {
         return false;
       }
@@ -21,7 +21,7 @@ class NoteAddController {
     }
     this._resetForm();
     this.setFocus(1);
-	}
+  }
 }
 
 NoteAddController.$inject = ['$state', '$window', 'NoteService', 'ConfigService'];

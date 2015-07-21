@@ -69,63 +69,65 @@ let schemes = [
 ];
 
 let Init = angular.module('Init', [])
-.service('ConfigService', function($http, $q) {
-  const serverURL = 'http://127.0.0.1:4000/config/';
-  const configPath = nw ? "client/config.json" : "../../config.json";
-  const schemesPath = nw ? "client/schemes/" : "schemes/";
-  this.configData = {};
-  this.schemes = schemes;
+  .service('ConfigService', function($http, $q) {
+    const serverURL = 'http://127.0.0.1:4000/config/';
+    const configPath = nw ? "client/config.json" : "../../config.json";
+    const schemesPath = nw ? "client/schemes/" : "schemes/";
+    this.configData = {};
+    this.schemes = schemes;
 
-  let colorScheme = () => {
-    /* inject code scheme style */
-    let schemePath = schemesPath + this.configData.scheme;
-    $("#scheme-css").html(`<link href="${schemePath}.css" rel="stylesheet">`);
-  };
+    let colorScheme = () => {
+      /* inject code scheme style */
+      let schemePath = schemesPath + this.configData.scheme;
+      $("#scheme-css").html(`<link href="${schemePath}.css" rel="stylesheet">`);
+    };
 
-  this.save = () => {
-    if (nw) {
-      fs.writeFile(configPath, JSON.stringify(this.configData));
-    } else {
-      $http.post(serverURL + 'update', {data: this.configData});
-    }
-    colorScheme();
-  };
-  
-  this.load = () => {
-    let defer = $q.defer();
-    switch(nw) {
-      case true:
-        this.configData = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-        colorScheme();
-        defer.resolve();
-      break;
-      case false:
-        $http.get(configPath).then((res) => {
-          this.configData = res.data;
+    this.save = () => {
+      if (nw) {
+        fs.writeFile(configPath, JSON.stringify(this.configData));
+      } else {
+        $http.post(serverURL + 'update', {
+          data: this.configData
+        });
+      }
+      colorScheme();
+    };
+
+    this.load = () => {
+      let defer = $q.defer();
+      switch (nw) {
+        case true:
+          this.configData = JSON.parse(fs.readFileSync(configPath, 'utf8'));
           colorScheme();
           defer.resolve();
-        });
-      break;
+          break;
+        case false:
+          $http.get(configPath).then((res) => {
+            this.configData = res.data;
+            colorScheme();
+            defer.resolve();
+          });
+          break;
+      }
+      return defer.promise;
+    };
+  })
+  /* Configuration APP */
+  .run(function(ConfigService, $rootScope, $timeout, $state) {
+    /* load config */
+    ConfigService.load();
+    let configData = ConfigService.configData;
+    if (nw) {
+      configData.tray && tray($state);
+      hotkeys(ConfigService, $state);
+      scroll($rootScope, $timeout);
+      configData.minimizeOnStart && win.minimize();
     }
-    return defer.promise;
-  };
-})
-/* Configuration APP */
-.run(function(ConfigService, $rootScope, $timeout, $state) {
-  /* load config */
-  ConfigService.load();
-  let configData = ConfigService.configData;
-  if (nw) {
-    configData.tray && tray($state);
-    hotkeys(ConfigService, $state);
-    scroll($rootScope, $timeout);
-    configData.minimizeOnStart && win.minimize();
-  }
 
-  /* fix materialize-css label */
-  $(document).on('click', '.input-field label', function() {
-    $(this).parent().find('input').focus();
+    /* fix materialize-css label */
+    $(document).on('click', '.input-field label', function() {
+      $(this).parent().find('input').focus();
+    });
   });
-});
 
 export default Init;

@@ -1,5 +1,5 @@
 class NoteEditController {
-	constructor($stateParams, $state, $window, NoteService, ConfigService){
+  constructor($stateParams, $state, $window, NoteService, ConfigService) {
     this.wordWrap = ConfigService.configData.wordWrap;
     this.id = $stateParams.id;
     this.note = NoteService.getOne(this.id);
@@ -24,7 +24,7 @@ class NoteEditController {
     };
 
     this.setFocus(1);
-	}
+  }
 }
 
 NoteEditController.$inject = ['$stateParams', '$state', '$window', 'NoteService', 'ConfigService'];

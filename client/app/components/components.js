@@ -6,12 +6,12 @@ import NoteEdit from './note/noteEdit/noteEdit';
 import Options from './options/options';
 
 let componentModule = angular.module('app.components', [
-    About.name,
-    NoteShow.name,
-    NoteList.name,
-    NoteAdd.name,
-    NoteEdit.name,
-    Options.name
+  About.name,
+  NoteShow.name,
+  NoteList.name,
+  NoteAdd.name,
+  NoteEdit.name,
+  Options.name
 ]);
 
 export default componentModule;

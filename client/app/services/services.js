@@ -1,7 +1,7 @@
 import NoteService from './note/note.service';
 
 let servicesModule = angular.module('app.services', [
-	NoteService.name
+  NoteService.name
 ]);
 
 export default servicesModule;
