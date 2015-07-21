@@ -12,8 +12,7 @@ let NoteService = angular.module('NoteService', [])
   };
 
   let getToday = () => {
-    let today = moment().format('DD/MM/YYYY');
-    return today;
+    return moment().format('DD/MM/YYYY');
   };
 
   let filter = (text) => {
