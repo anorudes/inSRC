@@ -12,10 +12,27 @@
                 </select>
               </div>
             </div>
+            
             <div class="input-field">
-              <p>
+                <input id="hotkey_list" class="note-edit__input" ng-model="vm.hotkeyList" type="text" />
+                <label for="hotkey_list" class="active">Hotkey for list page</label>
+            </div>
+            <div class="input-field">
+                <input id="hotkey_add" class="note-edit__input" ng-model="vm.hotkeyAdd" type="text" />
+                <label for="hotkey_add" class="active">Hotkey for add page</label>
+            </div>
+            <div class="input-field">
+              <p class="inline">
                   <input id="word-wrap" type="checkbox" value="title" ng-model="vm.wordWrap" />
                   <label for="word-wrap">Word wrap</label>
+              </p>
+              <p class="inline">
+                  <input id="tray-icon" type="checkbox" value="title" ng-model="vm.tray" />
+                  <label for="tray-icon">Tray icon</label>
+              </p>
+              <p class="inline">
+                  <input id="minimize" type="checkbox" value="title" ng-model="vm.minimize" />
+                  <label for="minimize">Minimize on start</label>
               </p>
             </div>
             <div class="input-field">

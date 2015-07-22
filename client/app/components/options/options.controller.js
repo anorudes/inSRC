@@ -3,11 +3,19 @@ class OptionsController {
     let data = ConfigService.configData;
 
     this.schemes = ConfigService.schemes;
-    this.scheme = ConfigService.configData.scheme;
+    this.scheme = data.scheme;
+    this.minimize = data.minimizeOnStart;
+    this.tray = data.tray;
     this.wordWrap = data.wordWrap;
+    this.hotkeyList = data.hotkeyList;
+    this.hotkeyAdd = data.hotkeyAdd;
     this.save = () => {
       data.scheme = this.scheme;
       data.wordWrap = this.wordWrap;
+      data.minimizeOnStart = this.minimize;
+      data.tray = this.tray;
+      data.hotkeyList = this.hotkeyList;
+      data.hotkeyAdd = this.hotkeyAdd;
       ConfigService.save();
       $state.transitionTo('list');
     };

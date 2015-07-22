@@ -44,6 +44,19 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
     display: block;
     margin: 10px 0px 15px 0px; }
 
+[type="checkbox"]:checked + label:before {
+  height: 15px;
+  width: 9px;
+  top: 1px; }
+
+[type="checkbox"]:not(:checked) + label:before {
+  width: 14px;
+  height: 14px;
+  top: 3px; }
+
+[type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label {
+  padding-left: 20px; }
+
 main {
   position: relative;
   min-height: 265px; }
@@ -77,20 +90,10 @@ main {
     right: 15px;
     top: 62px;
     z-index: 100; }
-  .section-note-search [type="checkbox"]:checked + label:before {
-    height: 15px;
-    width: 9px;
-    top: 1px; }
-  .section-note-search [type="checkbox"]:not(:checked) + label:before {
-    width: 14px;
-    height: 14px;
-    top: 3px; }
-  .section-note-search [type="checkbox"]:not(:checked) + label, .section-note-search [type="checkbox"]:checked + label {
-    padding-left: 20px; }
   .section-note-search p {
     display: inline-block;
     vertical-align: top;
-    margin-right: 10px; }
+    margin-right: 15px; }
 
 .section-note-list {
   margin: -30px 0px -20px 0px;
@@ -420,7 +423,7 @@ footer.page-footer {
 
 .section-options .select {
   position: relative;
-  margin-bottom: 5px; }
+  margin-bottom: 25px; }
   .section-options .select select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -445,5 +448,10 @@ footer.page-footer {
 
 .section-options .buttons-center {
   padding-top: 5px; }
+
+.section-options .inline {
+  display: inline-block;
+  vertical-align: top;
+  margin: -9px 15px 0px 0px; }
 
 /*# sourceMappingURL=styles.css.map */

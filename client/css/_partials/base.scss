@@ -60,3 +60,25 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
     margin: 10px 0px 15px 0px;
   }
 }
+
+// ***************************************************************************
+// Checkbox
+// ***************************************************************************
+
+[type="checkbox"]:checked+label {
+ &:before {
+   height: 15px;
+   width: 9px;
+   top: 1px;
+ }
+}
+[type="checkbox"]:not(:checked)+label {
+ &:before {
+   width: 14px;
+   height: 14px;
+   top: 3px;
+ }
+}
+[type="checkbox"]:not(:checked)+label, [type="checkbox"]:checked+label {
+ padding-left: 20px;
+}

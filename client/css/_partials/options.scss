@@ -23,7 +23,7 @@
   }
   .select{
     position: relative;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
     select {
       appearance: none;
     }
@@ -51,6 +51,12 @@
   .buttons-center {
     padding-top: 5px;
   }
+  .inline {
+    display: inline-block;
+    vertical-align: top;
+    margin: -9px 15px 0px 0px;
+  }
+
 }
 
 

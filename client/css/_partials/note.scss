@@ -16,27 +16,10 @@
   top: 62px;
   z-index: 100;
  }
- [type="checkbox"]:checked+label {
-  &:before {
-    height: 15px;
-    width: 9px;
-    top: 1px;
-  }
- }
- [type="checkbox"]:not(:checked)+label {
-  &:before {
-    width: 14px;
-    height: 14px;
-    top: 3px;
-  }
- }
- [type="checkbox"]:not(:checked)+label, [type="checkbox"]:checked+label {
-  padding-left: 20px;
- }
  p {
   display: inline-block;
   vertical-align: top;
-  margin-right: 10px;
+  margin-right: 15px;
  }
 }
 
