@@ -14,11 +14,6 @@ let ScrollService = angular.module('ScrollService', [])
       if (toState.name === 'list') {
         $timeout(function() {
           window.scrollTo(0, listScrollY);
-          let searchText = document.getElementById('searchText');
-          searchText.nextSibling.nextSibling.className = "";
-          if (searchText.value != '') {
-            searchText.nextSibling.nextSibling.className = "active";
-          }
         });
       }
     });

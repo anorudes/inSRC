@@ -3,14 +3,6 @@ class NoteAddController {
     this.wordWrap = ConfigService.configData.wordWrap;
     this.note = noteAdd.note;
 
-    if (this.note.title !== undefined && this.note.title !== "") {
-      document.getElementById('title-label').className = "active";
-    }
-
-    if (this.note.keywords !== undefined && this.note.keywords !== "") {
-      document.getElementById('keywords-label').className = "active";
-    }
-
     this._resetForm = () => {
       this.note.title = "";
       this.note.keywords = "";

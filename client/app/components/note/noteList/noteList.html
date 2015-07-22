@@ -14,8 +14,8 @@
                         </p>
                     </div>
                     <div class="input-field col">
-                        <input ng-model="vm.userFilter.searchText" id="searchText" type="text" class="validate">
-                        <label for="icon_prefix">Search notes</label>
+                        <input ng-model="vm.userFilter.searchText" type="text" class="validate">
+                        <label for="icon_prefix" ng-class="{'active': vm.userFilter.searchText}">Search notes</label>
                     </div>
                 </div>
             </form>
