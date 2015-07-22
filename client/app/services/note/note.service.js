@@ -19,14 +19,6 @@ let NoteService = angular.module('NoteService', [])
     return text;
   };
 
-  this.emptyItem = {
-    id: "",
-    title: "",
-    keywords: "",
-    text: "",
-    date: ""
-  };
-
   this.getAll = () => {
     return data.items;
   };

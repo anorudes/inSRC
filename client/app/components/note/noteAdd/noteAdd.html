@@ -7,11 +7,11 @@
 
             <div class="input-field">
                 <input placeholder="" class="note-edit__input" ng-model="vm.note.title" type="text" id="field-1" ng-keyup="$event.keyCode == 13 && vm.setFocus(2)">
-                <label for="first_name">Title</label>
+                <label for="first_name" id="title-label">Title</label>
             </div>
             <div class="input-field">
                 <input class="note-edit__input" ng-model="vm.note.keywords" type="text"  id="field-2" ng-keyup="$event.keyCode == 13 && vm.setFocus(3)">
-                <label for="last_name">Keywords</label>
+                <label for="last_name" id="keywords-label">Keywords</label>
             </div>
             <div class="input-field">
                 <textarea class="note-edit__code" ng-class="{'word-wrap': vm.wordWrap}" ng-model="vm.note.text" id="field-3"></textarea>
