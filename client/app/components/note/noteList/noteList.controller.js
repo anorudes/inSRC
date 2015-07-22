@@ -12,17 +12,17 @@ let rhtmlspecialchars = (str) => {
 };
 
 class NoteListController {
-  constructor(NoteService, userFilter) {
+  constructor(NoteService, userFilter, notePreview) {
     this.userFilter = userFilter;
     this.notes = NoteService.getAll();
-    this.notePreview = false;
+    this.notePreview = notePreview;
     this.showPreview = (note) => {
-      this.notePreview = note;
-      this.notePreview.text = rhtmlspecialchars(this.notePreview.text);
+      this.notePreview.note = note;
+      this.notePreview.note.text = rhtmlspecialchars(this.notePreview.note.text);
     };
   }
 }
 
-NoteListController.$inject = ['NoteService', 'userFilter'];
+NoteListController.$inject = ['NoteService', 'userFilter', 'notePreview'];
 
 export default NoteListController;

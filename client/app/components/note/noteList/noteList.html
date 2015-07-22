@@ -3,15 +3,15 @@
         <div class="col s12">
             <form>
                 <div class="row">
-                		<div class="options">
-	                    <p>
-	                        <input type="checkbox" id="sKeywords" ng-model="vm.userFilter.searchKeywords" />
-	                        <label for="sKeywords">Keywords</label>
-	                    </p>
-	                    <p>
-	                        <input type="checkbox" id="sTitle" ng-model="vm.userFilter.searchTitle" />
-	                        <label for="sTitle">Title</label>
-	                    </p>
+                        <div class="options">
+                        <p>
+                            <input type="checkbox" id="sKeywords" ng-model="vm.userFilter.searchKeywords" />
+                            <label for="sKeywords">Keywords</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="sTitle" ng-model="vm.userFilter.searchTitle" />
+                            <label for="sTitle">Title</label>
+                        </p>
                     </div>
                     <div class="input-field col">
                         <input ng-model="vm.userFilter.searchText" id="searchText" type="text" class="validate">
@@ -27,14 +27,14 @@
         <div class="col s12">
             <li class="note-list collection-item" ng-repeat="note in vm.notes | orderBy:'-id' | searchByKeywords:vm.userFilter.searchText:vm.userFilter.searchKeywords:vm.userFilter.searchTitle" ng-click="vm.showPreview(note)">
                 <div class="note-mini">
-                    <span class="note-mini__title">{{ note.title }}</span>
-                    <span class="note-mini__date">{{ note.date }}</span>
-                    <span class="note-mini__keywords">{{ note.keywords }}</span>
+                    <span class="note-mini__title" ng-bind="::note.title"></span>
+                    <span class="note-mini__date" ng-bind="::note.date"></span>
+                    <span class="note-mini__keywords" ng-bind="::note.keywords"></span>
                 </div>
             </li>
         </div>
     </ul>
 </section>
-<section class="section-note-preview" ng-if="vm.notePreview != false">
-    <note-preview note="vm.notePreview"></note-preview>
+<section class="section-note-preview" ng-if="vm.notePreview.note != false">
+    <note-preview note="vm.notePreview.note"></note-preview>
 </section>

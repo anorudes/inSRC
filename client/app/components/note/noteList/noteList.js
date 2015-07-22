@@ -21,6 +21,11 @@ let noteListModule = angular.module('noteList', ['NoteService'])
     searchText: ""
   };
 }])
+.factory('notePreview', [() => {
+  return {
+    note: false
+  };
+}])
 .filter('searchByKeywords', function() {
   let searchByKeywords = (item, input) => {
     let noteKeywords = item.keywords.split(',');
