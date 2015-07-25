@@ -1,4 +1,7 @@
-# ITmemo (working title)
+# inSRC
+
+## Description
+soon...
 
 ## Install
 ```
