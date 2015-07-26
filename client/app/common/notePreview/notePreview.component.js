@@ -8,7 +8,8 @@ let notePreviewComponent = function() {
     restrict: 'E',
     controllerAs: 'vm',
     scope: {
-      note: "="
+      note: "=",
+      stretchToggle: "&"
     },
     bindToController: true
   };
