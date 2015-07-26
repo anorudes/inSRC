@@ -12,7 +12,7 @@ let rhtmlspecialchars = (str) => {
 };
 
 class NoteListController {
-  constructor(NoteService, userFilter, notePreview) {
+  constructor($window, NoteService, userFilter, notePreview) {
     this.userFilter = userFilter;
     this.notes = NoteService.getAll();
     this.notePreview = notePreview;
@@ -20,9 +20,10 @@ class NoteListController {
       this.notePreview.note = note;
       this.notePreview.note.text = rhtmlspecialchars(this.notePreview.note.text);
     };
+    $window.document.getElementById('search').focus();
   }
 }
 
-NoteListController.$inject = ['NoteService', 'userFilter', 'notePreview'];
+NoteListController.$inject = ['$window', 'NoteService', 'userFilter', 'notePreview'];
 
 export default NoteListController;
