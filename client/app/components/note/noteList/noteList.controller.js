@@ -12,10 +12,16 @@ let rhtmlspecialchars = (str) => {
 };
 
 class NoteListController {
-  constructor($window, NoteService, userFilter, notePreview) {
+  constructor($window, $scope, NoteService, userFilter, notePreview) {
     this.userFilter = userFilter;
     this.notes = NoteService.getAll();
     this.notePreview = notePreview;
+    this.stretch = false;
+
+    $scope.stretchToogle = () => {
+      this.stretch = !this.stretch;
+    };
+    
     this.showPreview = (note) => {
       this.notePreview.note = note;
       this.notePreview.note.text = rhtmlspecialchars(this.notePreview.note.text);
@@ -24,6 +30,6 @@ class NoteListController {
   }
 }
 
-NoteListController.$inject = ['$window', 'NoteService', 'userFilter', 'notePreview'];
+NoteListController.$inject = ['$window', '$scope', 'NoteService', 'userFilter', 'notePreview'];
 
 export default NoteListController;

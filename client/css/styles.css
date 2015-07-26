@@ -194,14 +194,22 @@ main {
   -ms-transform: translate(0px, -50%);
   transform: translate(0px, -50%);
   width: 50%;
-  max-width: 900px;
+  max-width: 1000px;
   min-width: 600px;
   height: 70%;
   min-height: 400px;
   padding: 20px;
   z-index: 100;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease; }
+  .section-note-preview.stretch {
+    width: 70%;
+    max-width: none; }
   .section-note-preview.ng-enter {
     transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -237,6 +245,20 @@ main {
   position: relative;
   height: 100%;
   width: 100%; }
+  .preview__close {
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    top: -2px;
+    font-size: 1.3em; }
+  .preview__stretch {
+    position: absolute;
+    right: 35px;
+    margin-top: -2px;
+    display: block;
+    font-size: 1.3em;
+    width: 10px;
+    cursor: pointer; }
   .preview__title {
     display: block;
     margin-bottom: 15px;
@@ -266,17 +288,8 @@ main {
     margin-top: 15px; }
   .preview__buttons {
     position: absolute;
-    bottom: -4px;
+    bottom: 0px;
     right: 10px; }
-  .preview__close {
-    cursor: pointer; }
-    .preview__close:after {
-      content: "X";
-      font-size: 16px;
-      font-weight: bold;
-      position: absolute;
-      right: 0px;
-      top: -5px; }
   .preview__icon {
     color: black;
     margin-right: 15px;

@@ -1,5 +1,6 @@
 <div class="preview">
-  <div class="preview__close" ng-click="vm.close()"></div>
+  <div class="preview__close fa fa-times" ng-click="vm.close()"></div>
+  <div class="preview__stretch fa fa-arrows-h" ng-click="$parent.stretchToogle()"></div>
   <div class="preview__title">{{ vm.note.title }}</div>
   <div hljs class="preview__code" ng-class="{'word-wrap': vm.wordWrap}" no-escape source="vm.note.text"></div>
   <div class="preview__keywords">{{ vm.note.keywords }}</div>

@@ -160,7 +160,7 @@
   top: 48%;
   transform: translate(0px, -50%);
   width: 50%;
-  max-width: 900px;
+  max-width: $preview-max-width;
   min-width: 600px;
   height: 70%;
   min-height: $preview-min-height;
@@ -169,6 +169,11 @@
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  @include transition-e(.3s);
+  &.stretch {
+      width: 70%;
+      max-width: none;
+  }
   &.ng-enter {
     @include transition-e(.5s);
     transform: translate(150px, -50%);
@@ -193,6 +198,22 @@
   position: relative;
   height: 100%;
   width: 100%;
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    top: -2px;
+    font-size: 1.3em;
+  }
+  &__stretch {
+    position: absolute;
+    right: 35px;
+    margin-top: -2px;
+    display: block;
+    font-size: 1.3em;
+    width: 10px;
+    cursor: pointer;
+  }
   &__title {
     display: block;
     margin-bottom: 15px;
@@ -230,19 +251,8 @@
   }
   &__buttons {
     position: absolute;
-    bottom: -4px;
+    bottom: 0px;
     right: 10px;
-  }
-  &__close {
-    cursor: pointer;
-    &:after {
-      content: "X";
-      font-size: 16px;
-      font-weight: bold;
-      position: absolute;
-      right: 0px;
-      top: -5px;
-    }
   }
   &__icon {
     color: black;

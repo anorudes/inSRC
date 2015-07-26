@@ -75,9 +75,9 @@
   "window": {
     "toolbar": true,
     "show": true,
-    "width": 1000,
-    "height": 700,
-    "resizable": false,
+    "width": 1200,
+    "height": 800,
+    "resizable": true,
     "icon": "./icon.png"
   }
 }
