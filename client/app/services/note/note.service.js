@@ -43,7 +43,7 @@ let NoteService = angular.module('NoteService', [])
     item.text = item.text.trim();
     item.id = getMaxId() + 1;
     item.date = getToday();
-    data.items.push(item);
+    data.items.push({...item});
   };
 
   this.resolveData = async() => {

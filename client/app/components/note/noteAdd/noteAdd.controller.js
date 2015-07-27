@@ -14,9 +14,12 @@ class NoteAddController {
     };
 
     this.save = () => {
-      if (!this.note.title) {
+      if (!this.note.text) {
         return false;
       }
+
+      this.note.title = this.note.title.toString() === "" ? "none" : this.note.title;
+      this.note.keywords = this.note.keywords.toString() === "" ? "none" : this.note.keywords;
       NoteService.add(this.note);
       NoteService.saveData();
       this._resetForm();
