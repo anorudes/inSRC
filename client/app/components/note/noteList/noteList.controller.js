@@ -12,11 +12,12 @@ let rhtmlspecialchars = (str) => {
 };
 
 class NoteListController {
-  constructor($window, NoteService, userFilter, notePreview) {
+  constructor($window, NoteService, userFilter, notePreview, ConfigService) {
     this.userFilter = userFilter;
     this.notes = NoteService.getAll();
     this.notePreview = notePreview;
     this.stretch = false;
+    this.searchLimit = ConfigService.configData.searchLimit;
 
     this.stretchToggle = () => {
       this.stretch = !this.stretch;
@@ -30,6 +31,6 @@ class NoteListController {
   }
 }
 
-NoteListController.$inject = ['$window', 'NoteService', 'userFilter', 'notePreview'];
+NoteListController.$inject = ['$window', 'NoteService', 'userFilter', 'notePreview', 'ConfigService'];
 
 export default NoteListController;

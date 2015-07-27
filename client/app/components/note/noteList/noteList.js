@@ -18,7 +18,8 @@ let noteListModule = angular.module('noteList', ['NoteService'])
   return {
     searchKeywords: true,
     searchTitle: false,
-    searchText: ""
+    searchText: "",
+    searchLimit: true
   };
 }])
 .factory('notePreview', [() => {
@@ -29,8 +30,7 @@ let noteListModule = angular.module('noteList', ['NoteService'])
 .filter('keywords', function() {
   return function(keywords) {
     return keywords.split(' | ')[0];
-  };
-})
+  };})
 .filter('searchByKeywords', function() {
   let searchByKeywords = (item, input) => {
     let noteKeywords = item.keywords.split(',');
@@ -60,8 +60,13 @@ let noteListModule = angular.module('noteList', ['NoteService'])
     }
     return found === searchTitle.length;
   };
-  return function(items, input = "", searchKeywords, searchTitle) {
+  return function(items, input = "", searchKeywords, searchTitle, searchLimit) {
+    let max = 0;
     return items.filter(function(item) {
+      max++;
+      if (searchLimit && max > 100) {
+        return false;
+      }
       let foundKeywords = searchKeywords === true ? searchByKeywords(item, input) : false;
       let foundTitle = searchTitle === true ? searchByTitle(item, input) : false;
       return foundKeywords || foundTitle;

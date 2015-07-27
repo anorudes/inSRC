@@ -23,15 +23,19 @@
             </div>
             <div class="input-field">
               <p class="inline">
-                  <input id="word-wrap" type="checkbox" value="title" ng-model="vm.wordWrap" />
+                  <input id="word-wrap" type="checkbox" ng-model="vm.wordWrap" />
                   <label for="word-wrap">Word wrap</label>
               </p>
               <p class="inline">
-                  <input id="tray-icon" type="checkbox" value="title" ng-model="vm.tray" />
+                  <input id="search-limit" type="checkbox" ng-model="vm.searchLimit" />
+                  <label for="search-limit">Search limit</label>
+              </p>
+              <p class="inline">
+                  <input id="tray-icon" type="checkbox" ng-model="vm.tray" />
                   <label for="tray-icon">Tray icon</label>
               </p>
               <p class="inline">
-                  <input id="minimize" type="checkbox" value="title" ng-model="vm.minimize" />
+                  <input id="minimize" type="checkbox" ng-model="vm.minimize" />
                   <label for="minimize">Minimize on start</label>
               </p>
             </div>

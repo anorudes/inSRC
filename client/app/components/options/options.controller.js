@@ -9,6 +9,7 @@ class OptionsController {
     this.wordWrap = data.wordWrap;
     this.hotkeyList = data.hotkeyList;
     this.hotkeyAdd = data.hotkeyAdd;
+    this.searchLimit = data.searchLimit;
     this.save = () => {
       data.scheme = this.scheme;
       data.wordWrap = this.wordWrap;
@@ -16,6 +17,7 @@ class OptionsController {
       data.tray = this.tray;
       data.hotkeyList = this.hotkeyList;
       data.hotkeyAdd = this.hotkeyAdd;
+      data.searchLimit = this.searchLimit;
       ConfigService.save();
       $state.transitionTo('list');
     };
