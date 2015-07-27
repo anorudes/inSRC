@@ -12,7 +12,6 @@ jspm_packages
 styles.css
 data-cache
 data-cash
-gh-pages
 client/app/components/import
 import
 export
