@@ -64,7 +64,8 @@
     "bower": "^1.4.1",
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-notify": "^2.2.0",
-    "gulp-util": "^3.0.6"
+    "gulp-util": "^3.0.6",
+    "merge-stream": "^0.1.8"
   },
   "webkit": {
     "page-cache": false,
