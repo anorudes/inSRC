@@ -7,10 +7,8 @@ var app = express();
 var dbPath = path.join(__dirname, 'db', 'data.json');
 var configPath = path.join(__dirname, '../client/', 'config.json');
 
-app.use(bodyParser.json());       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-  extended: true
-}));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 // CORS
 app.use(function(req, res, next) {
