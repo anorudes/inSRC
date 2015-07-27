@@ -17,10 +17,9 @@ let Init = angular.module('Init', [
   ConfigService.load();
   let configData = ConfigService.configData;
 
+  ScrollService.init();
   if (nw) {
     HotkeysService.init();
-    ScrollService.init();
-
     if (configData.tray) TrayService.init();
     if (configData.minimizeOnStart) win.minimize();
   }
