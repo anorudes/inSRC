@@ -130,7 +130,7 @@ main {
       .section-note-list li .note-mini__title {
         font-size: 16px;
         margin-bottom: 5px; }
-    .section-note-list li:hover .note-mini {
+    .section-note-list li:hover .note-mini, .section-note-list li.show .note-mini {
       padding-left: 10px; }
   .section-note-list.show-preview .note-mini__date {
     opacity: 0; }

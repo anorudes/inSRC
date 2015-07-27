@@ -25,7 +25,7 @@
 <section class="section-note-list" ng-class="{'show-preview': vm.notePreview}">
     <ul class="collection">
         <div class="col s12">
-            <li class="note-list collection-item" ng-repeat="note in vm.notes | orderBy:'-id' | searchByKeywords:vm.userFilter.searchText:vm.userFilter.searchKeywords:vm.userFilter.searchTitle" ng-click="vm.showPreview(note)">
+            <li class="note-list collection-item" ng-class="{'show': vm.notePreview.note === note}" ng-repeat="note in vm.notes | orderBy:'-id' | searchByKeywords:vm.userFilter.searchText:vm.userFilter.searchKeywords:vm.userFilter.searchTitle" ng-click="vm.showPreview(note);">
                 <div class="note-mini">
                     <span class="note-mini__title" ng-bind="::note.title"></span>
                     <span class="note-mini__date" ng-bind="::note.date"></span>
