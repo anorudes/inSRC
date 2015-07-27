@@ -15,7 +15,9 @@ var gulp	 		  = require('gulp'),
     minifyCss   = require('gulp-minify-css'),
     autoprefixer = require('gulp-autoprefixer'),
     shell = require('gulp-shell'),
-    notify = require("gulp-notify");
+    notify = require("gulp-notify"),
+    NwBuilder = require('node-webkit-builder'),
+    gutil = require('gulp-util');
 
 var nw = !!$.util.env.nw;
 
@@ -62,6 +64,28 @@ gulp.task('serve', function(){
 			}
 		},
 	});
+});
+
+gulp.task('build-copy', function () {
+
+});
+
+gulp.task('build', ['build-copy']);
+
+gulp.task('build-app', function () {
+    var nw = new NwBuilder({
+        version: '0.11.0',
+        files: './build/**',
+        platforms: ['win64']
+    });
+    
+    nw.on('log', function (msg) {
+        gutil.log('node-webkit-builder', msg);
+    });
+    
+    return nw.build().catch(function (err) {
+        gutil.log('node-webkit-builder', err);
+    });
 });
 
 gulp.task('build', function() {

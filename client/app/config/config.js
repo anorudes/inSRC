@@ -67,7 +67,7 @@ let schemes = [
 let ConfigService = angular.module('ConfigService', [])
 .service('ConfigService', function($http, $q) {
   const serverURL = 'http://127.0.0.1:4000/config/';
-  const configPath = nw ? "client/config.json" : "../../config.json";
+  const configPath = nw ? "config.json" : "../../config.json";
   const schemesPath = nw ? "client/schemes/" : "schemes/";
   this.configData = {};
   this.schemes = schemes;
@@ -90,7 +90,11 @@ let ConfigService = angular.module('ConfigService', [])
   this.load = async () => {
     let defer = $q.defer();
     if (nw) {
-      this.configData = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+      if (fs.existsSync(execPath + configPath)) {
+        this.configData = JSON.parse(fs.readFileSync(execPath + configPath, 'utf8'));
+      } else {
+        this.configData = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+      }
       colorScheme();
       defer.resolve();
     } else {

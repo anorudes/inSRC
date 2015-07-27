@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "starter",
   "main": "index.html",
-  "chromium-args": "--data-path='./data-cache/'",
   "scripts": {
     "test": "karma start",
     "postinstall": "jspm install"

@@ -9,7 +9,8 @@ let notePreviewComponent = function() {
     controllerAs: 'vm',
     scope: {
       note: "=",
-      stretchToggle: "&"
+      stretchToggle: "&",
+      closePreview: "&"
     },
     bindToController: true
   };

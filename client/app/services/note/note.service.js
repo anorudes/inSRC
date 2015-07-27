@@ -1,7 +1,7 @@
 let NoteService = angular.module('NoteService', [])
 .service('NoteService', function($timeout, $http) {
   const serverURL = 'http://127.0.0.1:4000/data/';
-  const dbFile = 'server/db/data.json';
+  const dbFile = 'db/data.json';
 
   let data = {
     items: []
@@ -29,6 +29,7 @@ let NoteService = angular.module('NoteService', [])
 
   this.delete = (id) => {
     data.items.splice(data.items.indexOf(this.getOne(id)), 1);
+    this.saveData();
   };
 
   this.update = (note, noteEdit) => {
@@ -51,7 +52,11 @@ let NoteService = angular.module('NoteService', [])
       data: ""
     }
     if (nw) { /* node-webkit */
-      res.data = JSON.parse(fs.readFileSync(dbFile, 'utf8'));
+      if (fs.existsSync(execPath + dbFile)) {
+        res.data = JSON.parse(fs.readFileSync(execPath + dbFile, 'utf8'));
+      } else {
+        res.data = JSON.parse(fs.readFileSync(dbFile, 'utf8'));
+      }
     } else {
       res = await $http.get(serverURL + 'get');
     }

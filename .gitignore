@@ -3,6 +3,8 @@
 node_modules
 bower_components
 jspm_packages
+build
+cache
 .settings
 *.log
 .sass-cache
@@ -15,3 +17,4 @@ data-cash
 client/app/components/import
 import
 export
+build-app

@@ -12,10 +12,10 @@ let rhtmlspecialchars = (str) => {
 };
 
 class NoteListController {
-  constructor($window, NoteService, userFilter, notePreview, ConfigService) {
+  constructor($window, $scope, NoteService, userFilter, notePreview, ConfigService) {
     this.userFilter = userFilter;
     this.notes = NoteService.getAll();
-    this.notePreview = notePreview;
+    $scope.notePreview = notePreview;
     this.stretch = false;
     this.searchLimit = ConfigService.configData.searchLimit;
 
@@ -24,13 +24,19 @@ class NoteListController {
     };
 
     this.showPreview = (note) => {
-      this.notePreview.note = note;
-      this.notePreview.note.text = rhtmlspecialchars(this.notePreview.note.text);
+      $scope.notePreview.note = note;
+      $scope.notePreview.note.text = rhtmlspecialchars($scope.notePreview.note.text);
     };
+
+    this.closePreview = () => {
+      $scope.notePreview.note = false;
+      $scope.$apply();
+    }
+
     $window.document.getElementById('search').focus();
   }
 }
 
-NoteListController.$inject = ['$window', 'NoteService', 'userFilter', 'notePreview', 'ConfigService'];
+NoteListController.$inject = ['$window', '$scope', 'NoteService', 'userFilter', 'notePreview', 'ConfigService'];
 
 export default NoteListController;
