@@ -252,11 +252,11 @@
   &__buttons {
     position: absolute;
     bottom: 0px;
-    right: 10px;
+    right: -3px;
   }
   &__icon {
     color: black;
-    margin-right: 15px;
+    margin-right: 10px;
     cursor: pointer;
     &:last-child {
       margin-right: 0;
