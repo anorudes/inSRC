@@ -147,7 +147,7 @@ gulp.task('build-jspm', ['build-copy'], shell.task([
 ]));
 
 gulp.task('build-copy', ['build-clean'], function() {
-  gulp.src(['client/**/*', '!client/app/**/*']).pipe(gulp.dest('build/client/'));
+  gulp.src(['client/**/*', '!client/app/**/*', '!client/*.*']).pipe(gulp.dest('build/client/'));
 });
 
 gulp.task('build-clean', function () {
