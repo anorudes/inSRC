@@ -90,11 +90,7 @@ let ConfigService = angular.module('ConfigService', [])
   this.load = async () => {
     let defer = $q.defer();
     if (nw) {
-      if (fs.existsSync(execPath + configPath)) {
-        this.configData = JSON.parse(fs.readFileSync(execPath + configPath, 'utf8'));
-      } else {
-        this.configData = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-      }
+      this.configData = JSON.parse(fs.readFileSync(execPath + configPath, 'utf8'));
       colorScheme();
       defer.resolve();
     } else {

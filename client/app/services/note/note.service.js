@@ -52,11 +52,7 @@ let NoteService = angular.module('NoteService', [])
       data: ""
     }
     if (nw) { /* node-webkit */
-      if (fs.existsSync(execPath + dbFile)) {
         res.data = JSON.parse(fs.readFileSync(execPath + dbFile, 'utf8'));
-      } else {
-        res.data = JSON.parse(fs.readFileSync(dbFile, 'utf8'));
-      }
     } else {
       res = await $http.get(serverURL + 'get');
     }
