@@ -26,6 +26,13 @@ let noteListModule = angular.module('noteList', ['NoteService'])
     note: false
   };
 }])
+.filter('keywords', function() {
+  return function(keywords) {
+    let index = keywords.indexOf(" | ");
+    if (index === -1) { index = keywords.length; }
+    return keywords.substring(0, index);
+  };
+})
 .filter('searchByKeywords', function() {
   let searchByKeywords = (item, input) => {
     let noteKeywords = item.keywords.split(',');
