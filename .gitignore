@@ -3,9 +3,10 @@
 node_modules
 bower_components
 jspm_packages
-build/client
-build/inSRC
-build/*.js
+build-temp/client
+build-temp/inSRC
+build-temp/*.js
+binary
 cache
 .settings
 *.log

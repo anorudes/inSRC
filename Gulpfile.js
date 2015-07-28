@@ -19,7 +19,8 @@ var gulp	 		  = require('gulp'),
     NwBuilder = require('node-webkit-builder'),
     gutil = require('gulp-util'),
     clean = require('gulp-clean'),
-    merge = require('merge-stream');
+    merge = require('merge-stream'),
+    runSequence = require('run-sequence');
 
 var nw = !!$.util.env.nw;
 
@@ -68,6 +69,10 @@ gulp.task('serve', function(){
 	});
 });
 
+// ***************************************************************************
+// Sass
+// ***************************************************************************
+
 gulp.task('sass', function() {
     return gulp.src('client/css/styles.scss').pipe(sourcemaps.init()).pipe(sass()
     .on('error', function(err) {
@@ -81,6 +86,10 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('client/css'));
 });
+
+// ***************************************************************************
+// Generate component
+// ***************************************************************************
 
 
 gulp.task('component', function(){
@@ -116,20 +125,26 @@ gulp.task('dataServer', !nw && shell.task([
 // Build Task "gulp build"
 // ***************************************************************************
 
-/* TODO */
+gulp.task('build', function() {
+  runSequence('build-clean', 'build-copy', 'build-jspm', 'build-app', 'buld-clean-temp', 'copy-config');
+});
 
-gulp.task('build', ['copy-config']);
+gulp.task('buld-clean-temp', function () {
+    return gulp.src(['build-temp/client'], {read: false})
+        .pipe(clean());
+});
 
-gulp.task('copy-config', ['build-app'], function () {
-  var config = gulp.src('config.json').pipe(gulp.dest('build/inSRC/win64/'))
-  var db = gulp.src('db/**/*').pipe(gulp.dest('build/inSRC/win64/db/'))
+gulp.task('copy-config', function () {
+  var config = gulp.src('config.json').pipe(gulp.dest('binary/inSRC/win64/'))
+  var db = gulp.src('db/**/*').pipe(gulp.dest('binary/inSRC/win64/db/'))
   return merge(config, db);
 });
 
-gulp.task('build-app', ['build-jspm'], function () {
+gulp.task('build-app', function () {
     var nw = new NwBuilder({
         version: '0.11.0',
-        files: './build/**',
+        files: './build-temp/**',
+        buildDir: './binary',
         platforms: ['win64']
     });
     
@@ -142,18 +157,22 @@ gulp.task('build-app', ['build-jspm'], function () {
     });
 });
 
-gulp.task('build-jspm', ['build-copy'], shell.task([
-    'jspm bundle-sfx client/app/app build/build.js'
+gulp.task('build-jspm', shell.task([
+    'jspm bundle-sfx client/app/app build-temp/build.js'
 ]));
 
-gulp.task('build-copy', ['build-clean'], function() {
-  gulp.src(['client/**/*', '!client/app/**/*', '!client/*.*']).pipe(gulp.dest('build/client/'));
+gulp.task('build-copy', function() {
+  gulp.src(['client/**/*', '!client/app/**/*', '!client/*.*']).pipe(gulp.dest('build-temp/client/'));
 });
 
 gulp.task('build-clean', function () {
-    return gulp.src(['build/client/css', 'build/client/schemes', 'build/vendor', 'build/bower_components'], {read: false})
+    return gulp.src(['build-temp/client/css', 'build-temp/client/schemes', 'build-temp/vendor', 'build-temp/bower_components'], {read: false})
         .pipe(clean());
 });
+
+// ***************************************************************************
+// Watch
+// ***************************************************************************
 
 gulp.task('watch', function() {
     gulp.watch(['./client/css/**/*.scss'], ['sass']);

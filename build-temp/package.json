@@ -1,18 +1,9 @@
 {
   "name": "inSRC",
   "version": "0.0.1",
-  "description": "starter",
+  "description": "inSRC",
   "main": "index.html",
-  "scripts": {
-    "test": "karma start",
-    "postinstall": "jspm install"
-  },
-  "keywords": [
-    "angular",
-    "webpack",
-    "es6"
-  ],
-  "author": "AngularClass",
+  "author": "anorudes@gmail.com",
   "license": "ISC",
   "jspm": {
     "directories": {},

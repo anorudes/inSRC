@@ -1,18 +1,9 @@
 {
   "name": "inSRC",
   "version": "0.0.1",
-  "description": "starter",
+  "description": "inSRC",
   "main": "index.html",
-  "scripts": {
-    "test": "karma start",
-    "postinstall": "jspm install"
-  },
-  "keywords": [
-    "angular",
-    "webpack",
-    "es6"
-  ],
-  "author": "AngularClass",
+  "author": "anorudes@gmail.com",
   "license": "ISC",
   "jspm": {
     "directories": {},
@@ -65,7 +56,8 @@
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-notify": "^2.2.0",
     "gulp-util": "^3.0.6",
-    "merge-stream": "^0.1.8"
+    "merge-stream": "^0.1.8",
+    "run-sequence": "^1.1.2"
   },
   "webkit": {
     "page-cache": false,
