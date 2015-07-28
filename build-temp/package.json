@@ -63,7 +63,7 @@
     "java": false
   },
   "window": {
-    "toolbar": true,
+    "toolbar": false,
     "show": true,
     "width": 1200,
     "height": 800,
