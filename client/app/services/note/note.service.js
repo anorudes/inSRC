@@ -1,4 +1,4 @@
-import {beautifyJS, beautifyHTML, beautifyCSS} from '../../api/beautify/init';
+import {beautifyJS, beautifyHTML, beautifyCSS} from '../../vendor/beautify/init';
 
 let NoteService = angular.module('NoteService', ['ConfigService'])
 .service('NoteService', function($timeout, $http, ConfigService) {
