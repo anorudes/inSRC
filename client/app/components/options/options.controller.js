@@ -10,11 +10,14 @@ class OptionsController {
     this.hotkeyList = data.hotkeyList;
     this.hotkeyAdd = data.hotkeyAdd;
     this.searchLimit = data.searchLimit;
+    this.beautify = data.beautify;
+
     this.save = () => {
       data.scheme = this.scheme;
       data.wordWrap = this.wordWrap;
       data.minimizeOnStart = this.minimize;
       data.tray = this.tray;
+      data.beautify = this.beautify;
       data.hotkeyList = this.hotkeyList;
       data.hotkeyAdd = this.hotkeyAdd;
       data.searchLimit = this.searchLimit;

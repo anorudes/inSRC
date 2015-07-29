@@ -1,5 +1,7 @@
-let NoteService = angular.module('NoteService', [])
-.service('NoteService', function($timeout, $http) {
+import {beautifyJS, beautifyHTML, beautifyCSS} from '../../api/beautify/init';
+
+let NoteService = angular.module('NoteService', ['ConfigService'])
+.service('NoteService', function($timeout, $http, ConfigService) {
   const serverURL = 'http://127.0.0.1:4000/data/';
   const dbFile = 'db/data.json';
 
@@ -14,6 +16,7 @@ let NoteService = angular.module('NoteService', [])
   let getToday = () => {
     return moment().format('DD/MM/YYYY');
   };
+
 
   let filter = (text) => {
     return text;
@@ -35,6 +38,11 @@ let NoteService = angular.module('NoteService', [])
   this.update = (note, noteEdit) => {
     note.title = noteEdit.title;
     note.text = filter(noteEdit.text);
+    if (ConfigService.configData.beautify) {
+      note.text = beautifyJS.js_beautify(note.text, {indent_size: 2});
+      note.text = beautifyHTML.html_beautify(note.text, {indent_size: 2});
+      note.text = beautifyCSS.css_beautify(note.text, {indent_size: 2});
+    }
     note.keywords = noteEdit.keywords;
     note.date = getToday();
     this.saveData();

@@ -34,6 +34,7 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.12",
     "hammer": "github:hammerjs/hammer.js@2.0.4",
     "jquery": "github:components/jquery@2.1.4",
+    "js-beautify": "github:beautify-web/js-beautify@1.5.10",
     "materialize-css": "npm:materialize-css@0.96.1",
     "normalize.css": "github:necolas/normalize.css@3.0.3",
     "text": "github:systemjs/plugin-text@0.0.2",
