@@ -22,6 +22,11 @@ http://localhost:3000/
 gulp --nw
 ```
 
+## Buld app (windows)
+```
+gulp build
+```
+
 ## ToDo
 1. [x] Запуск как app nw.js
 2. [x] Запуск как сайт
