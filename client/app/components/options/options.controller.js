@@ -3,6 +3,7 @@ class OptionsController {
     let data = ConfigService.configData;
 
     this.schemes = ConfigService.schemes;
+    this.skins = ConfigService.skins;
     this.scheme = data.scheme;
     this.minimize = data.minimizeOnStart;
     this.tray = data.tray;
@@ -11,6 +12,7 @@ class OptionsController {
     this.hotkeyAdd = data.hotkeyAdd;
     this.searchLimit = data.searchLimit;
     this.beautify = data.beautify;
+    this.skin = data.skin;
 
     this.save = () => {
       data.scheme = this.scheme;
@@ -21,6 +23,7 @@ class OptionsController {
       data.hotkeyList = this.hotkeyList;
       data.hotkeyAdd = this.hotkeyAdd;
       data.searchLimit = this.searchLimit;
+      data.skin = this.skin;
       ConfigService.save();
       $state.transitionTo('list');
     };

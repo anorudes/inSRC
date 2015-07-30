@@ -4,6 +4,14 @@
             <span class="page-title">
               <h1>Options</h1>
             </span>
+          <div class="input-field">
+            <label class="label">Skin</label>
+            <div class="select">
+              <select ng-model="vm.skin" class="browser-default">
+                <option value="{{skin}}" ng-selected="vm.skin === skin" ng-repeat="skin in vm.skins">{{skin}}</option>
+              </select>
+            </div>
+          </div>
             <div class="input-field">
               <label class="label">Color scheme</label>
               <div class="select">
@@ -12,14 +20,15 @@
                 </select>
               </div>
             </div>
-
-            <div class="input-field">
-                <input id="hotkey_list" class="note-edit__input" ng-model="vm.hotkeyList" type="text" />
-                <label for="hotkey_list" class="active">Hotkey for list page</label>
-            </div>
-            <div class="input-field">
-                <input id="hotkey_add" class="note-edit__input" ng-model="vm.hotkeyAdd" type="text" />
-                <label for="hotkey_add" class="active">Hotkey for add page</label>
+            <div class="hotkeys">
+              <div class="input-field">
+                  <input id="hotkey_list" class="note-edit__input" ng-model="vm.hotkeyList" type="text" />
+                  <label for="hotkey_list" class="active">Hotkey for list page</label>
+              </div>
+              <div class="input-field">
+                  <input id="hotkey_add" class="note-edit__input" ng-model="vm.hotkeyAdd" type="text" />
+                  <label for="hotkey_add" class="active">Hotkey for add page</label>
+              </div>
             </div>
             <div class="input-field">
               <p class="inline">

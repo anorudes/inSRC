@@ -417,9 +417,11 @@ footer.page-footer {
   .section-options .row .col .input-field {
     margin-top: 0; }
 
+.section-options .hotkeys {
+  margin-top: 25px; }
+
 .section-options .select {
-  position: relative;
-  margin-bottom: 25px; }
+  position: relative; }
   .section-options .select select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -449,5 +451,8 @@ footer.page-footer {
   display: inline-block;
   vertical-align: top;
   margin: -9px 15px 0px 0px; }
+
+body {
+  display: none; }
 
 /*# sourceMappingURL=styles.css.map */

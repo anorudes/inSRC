@@ -1,3 +1,8 @@
+let skins = [
+  "red",
+  "blue"
+];
+
 let schemes = [
   'agate',
   'androidstudio',
@@ -69,8 +74,19 @@ let ConfigService = angular.module('ConfigService', [])
   const serverURL = 'http://127.0.0.1:4000/config/';
   const configPath = nw ? "config.json" : "../../config.json";
   const schemesPath = nw ? "client/schemes/" : "schemes/";
+  const skinsPath = nw ? "client/css/skins/" : "css/skins/";
   this.configData = {};
   this.schemes = schemes;
+  this.skins = skins;
+
+  let colorSkin = () => {
+    let skinPath = skinsPath + this.configData.skin;
+    $("#skin-css").html('');
+    if (this.configData.skin != "red") {
+      $("#skin-css").html(`<link href="${skinPath}.css" rel="stylesheet">`);
+    }
+    $('body').show();
+  }
 
   let colorScheme = () => {
     /* inject code scheme style */
@@ -85,6 +101,7 @@ let ConfigService = angular.module('ConfigService', [])
       $http.post(serverURL + 'update', {data: this.configData});
     }
     colorScheme();
+    colorSkin();
   };
   
   this.load = async () => {
@@ -92,11 +109,13 @@ let ConfigService = angular.module('ConfigService', [])
     if (nw) {
       this.configData = JSON.parse(fs.readFileSync(execPath + configPath, 'utf8'));
       colorScheme();
+      colorSkin();
       defer.resolve();
     } else {
       let res = await $http.get(configPath);
       this.configData = res.data;
       colorScheme();
+      colorSkin();
       defer.resolve();
     }
     return defer.promise;

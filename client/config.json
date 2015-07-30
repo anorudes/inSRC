@@ -6,5 +6,6 @@
   "hotkeyList": "Alt+Shift+Z",
   "hotkeyAdd": "Alt+Shift+X",
   "tray": true,
-  "minimizeOnStart": false
+  "minimizeOnStart": false,
+  "skin": "red"
 }
