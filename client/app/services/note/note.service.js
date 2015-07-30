@@ -66,7 +66,7 @@ let NoteService = angular.module('NoteService', ['ConfigService'])
 
   this.saveData = async() => {
     if (nw) { /* node-webkit */
-      fs.writeFile(dbFile, JSON.stringify(data.items));
+      fs.writeFile(execPath + dbFile, JSON.stringify(data.items));
     } else {
       return await $http.post(serverURL + 'update', {
         data: data.items

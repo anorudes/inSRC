@@ -79,16 +79,18 @@ let ConfigService = angular.module('ConfigService', [])
   this.schemes = schemes;
   this.skins = skins;
 
-  let colorSkin = () => {
+  let changeSkin = () => {
     let skinPath = skinsPath + this.configData.skin;
-    $("#skin-css").html('');
-    if (this.configData.skin != "red") {
-      $("#skin-css").html(`<link href="${skinPath}.css" rel="stylesheet">`);
+    let $skinSection = $("#skin-css");
+    let stylesheet = `<link href="${skinPath}.css" rel="stylesheet">`;
+    $skinSection.html('');
+    if (this.configData.skin != "red" && $skinSection.html() != stylesheet) {
+      $skinSection.html(stylesheet);
     }
     $('body').show();
   }
 
-  let colorScheme = () => {
+  let changeScheme = () => {
     /* inject code scheme style */
     let schemePath = schemesPath + this.configData.scheme;
     $("#scheme-css").html(`<link href="${schemePath}.css" rel="stylesheet">`);
@@ -100,22 +102,22 @@ let ConfigService = angular.module('ConfigService', [])
     } else {
       $http.post(serverURL + 'update', {data: this.configData});
     }
-    colorScheme();
-    colorSkin();
+    changeScheme();
+    changeSkin();
   };
   
   this.load = async () => {
     let defer = $q.defer();
     if (nw) {
       this.configData = JSON.parse(fs.readFileSync(execPath + configPath, 'utf8'));
-      colorScheme();
-      colorSkin();
+      changeScheme();
+      changeSkin();
       defer.resolve();
     } else {
       let res = await $http.get(configPath);
       this.configData = res.data;
-      colorScheme();
-      colorSkin();
+      changeScheme();
+      changeSkin();
       defer.resolve();
     }
     return defer.promise;
