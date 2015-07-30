@@ -1,1 +1,11 @@
-{"scheme":"tomorrow","wordWrap":true,"beautify":false,"searchLimit":true,"hotkeyList":"Alt+Shift+Z","hotkeyAdd":"Alt+Shift+X","tray":true,"minimizeOnStart":false,"skin":"blue"}
+{
+  "scheme": "tomorrow",
+  "wordWrap": true,
+  "beautify": false,
+  "searchLimit": true,
+  "hotkeyList": "Alt+Shift+Z",
+  "hotkeyAdd": "Alt+Shift+X",
+  "tray": true,
+  "minimizeOnStart": false,
+  "skin": "blue"
+}
