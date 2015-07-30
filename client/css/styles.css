@@ -3,10 +3,6 @@ html {
   height: 100%;
   font-size: 1rem; }
 
-body, main {
-  position: relative;
-  min-height: 100%; }
-
 .container {
   position: relative; }
 

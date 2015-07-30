@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 
 var dbPath = path.join(__dirname, '../db/', 'data.json');
-var configPath = path.join(__dirname, '../', 'config.json');
+var configPath = path.join(__dirname, '../client/', 'config.json');
 
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
