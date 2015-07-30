@@ -1,4 +1,6 @@
-/* toDo */
+import beautify from '../../../../vendor/beautify/init';
+
+/* TODO */
 let rhtmlspecialchars = (str) => {
   if (typeof(str) === "string") {
     str = str.replace(/&gt;/ig, ">");
@@ -26,6 +28,10 @@ class NoteListController {
     this.showPreview = (note) => {
       $scope.notePreview.note = note;
       $scope.notePreview.note.text = rhtmlspecialchars($scope.notePreview.note.text);
+      
+      if (ConfigService.configData.beautify) {
+        $scope.notePreview.note.text = ConfigService.configData.beautify ? beautify($scope.notePreview.note.text) : $scope.notePreview.note.text;
+      }
     };
 
     this.closePreview = () => {

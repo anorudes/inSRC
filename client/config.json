@@ -1,7 +1,7 @@
 {
   "scheme": "tomorrow",
   "wordWrap": true,
-  "beautify": true,
+  "beautify": false,
   "searchLimit": true,
   "hotkeyList": "Alt+Shift+Z",
   "hotkeyAdd": "Alt+Shift+X",

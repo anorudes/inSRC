@@ -1,4 +1,4 @@
-import {beautifyJS, beautifyHTML, beautifyCSS} from '../../vendor/beautify/init';
+import beautify from '../../../vendor/beautify/init';
 
 let NoteService = angular.module('NoteService', ['ConfigService'])
 .service('NoteService', function($timeout, $http, ConfigService) {
@@ -34,15 +34,11 @@ let NoteService = angular.module('NoteService', ['ConfigService'])
     data.items.splice(data.items.indexOf(this.getOne(id)), 1);
     this.saveData();
   };
-
+      
   this.update = (note, noteEdit) => {
     note.title = noteEdit.title;
     note.text = filter(noteEdit.text);
-    if (ConfigService.configData.beautify) {
-      note.text = beautifyJS.js_beautify(note.text, {indent_size: 2});
-      note.text = beautifyHTML.html_beautify(note.text, {indent_size: 2});
-      note.text = beautifyCSS.css_beautify(note.text, {indent_size: 2});
-    }
+    note.text = ConfigService.configData.beautify ? beautify(note.text) : note.text;
     note.keywords = noteEdit.keywords;
     note.date = getToday();
     this.saveData();
