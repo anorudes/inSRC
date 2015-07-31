@@ -1,7 +1,7 @@
 import template from './noteList.html!text';
 import controller from './noteList.controller';
 
-let noteListComponent = function(){
+let noteListComponent = () => {
 	return {
 		template,
 		controller,

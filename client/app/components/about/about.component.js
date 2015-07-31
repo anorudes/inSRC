@@ -1,7 +1,7 @@
 import template from './about.html!text';
 import controller from './about.controller';
 
-let aboutComponent = function() {
+let aboutComponent = () => {
   return {
     template,
     controller,

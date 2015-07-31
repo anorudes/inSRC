@@ -1,7 +1,7 @@
 import template from './options.html!text';
 import controller from './options.controller';
 
-let optionsComponent = function() {
+let optionsComponent = () => {
   return {
     template,
     controller,

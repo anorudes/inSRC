@@ -1,7 +1,7 @@
 let TrayService = angular.module('TrayService', [])
 .service('TrayService', function($state) {
 
-  this.init = function() {
+  this.init = () => {
     let enableClose = false;
 
     win.on('close', function() {

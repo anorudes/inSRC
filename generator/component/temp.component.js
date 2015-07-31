@@ -1,7 +1,7 @@
 import template from './<%= name %>.html!text';
 import controller from './<%= name %>.controller';
 
-let <%= name %>Component = function(){
+let <%= name %>Component = () => {
 	return {
 		template,
 		controller,

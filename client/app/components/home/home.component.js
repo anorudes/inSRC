@@ -1,7 +1,7 @@
 import template from './home.html!text';
 import controller from './home.controller';
 
-let homeComponent = function() {
+let homeComponent = () => {
   return {
     template,
     controller,

@@ -1,7 +1,7 @@
 import template from './notePreview.html!text';
 import controller from './notePreview.controller';
 
-let notePreviewComponent = function() {
+let notePreviewComponent = () => {
   return {
     template,
     controller,

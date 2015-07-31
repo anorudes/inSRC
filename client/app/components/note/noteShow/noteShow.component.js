@@ -1,7 +1,7 @@
 import template from './noteShow.html!text';
 import controller from './noteShow.controller';
 
-let noteShowComponent = function() {
+let noteShowComponent = () => {
   return {
     template,
     controller,

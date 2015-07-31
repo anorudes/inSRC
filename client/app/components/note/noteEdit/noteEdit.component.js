@@ -1,7 +1,7 @@
 import template from './noteEdit.html!text';
 import controller from './noteEdit.controller';
 
-let noteEditComponent = function(){
+let noteEditComponent = () => {
 	return {
 		template,
 		controller,

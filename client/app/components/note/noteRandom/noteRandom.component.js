@@ -1,7 +1,7 @@
 import template from './noteRandom.html!text';
 import controller from './noteRandom.controller';
 
-let noteRandomComponent = function(){
+let noteRandomComponent = () => {
 	return {
 		template,
 		controller,

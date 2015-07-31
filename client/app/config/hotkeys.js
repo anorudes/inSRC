@@ -1,7 +1,7 @@
 let HotkeysService = angular.module('HotkeysService', [])
 .service('HotkeysService', function(ConfigService, $state) {
 
-  this.init = function () {
+  this.init = () => {
     let shortcutList = new gui.Shortcut({ key : ConfigService.configData.hotkeyList, active : function() {
       $state.transitionTo('list');
       win.focus();

@@ -1,7 +1,7 @@
 import template from './noteAdd.html!text';
 import controller from './noteAdd.controller';
 
-let noteAddComponent = function(){
+let noteAddComponent = () => {
 	return {
 		template,
 		controller,

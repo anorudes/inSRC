@@ -4,7 +4,7 @@ let contentEditable = angular.module('contenteditable', [])
     restrict: "A",
     require: "ngModel",
     link: function(scope, element, attrs, ngModel) {
-      function read() {
+      let read = () => {
         ngModel.$setViewValue(element.html());
       }
 

@@ -1,7 +1,7 @@
 import template from './navbar.html!text';
 import controller from './navbar.controller';
 
-let navbarComponent = function(){
+let navbarComponent = () => {
 	return {
 		template,
 		controller,

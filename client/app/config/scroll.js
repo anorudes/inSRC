@@ -1,7 +1,7 @@
 let ScrollService = angular.module('ScrollService', [])
 .service('ScrollService', function($rootScope, $timeout) {
 
-  this.init = function () {
+  this.init = () => {
     let listScrollY = 0;
 
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
