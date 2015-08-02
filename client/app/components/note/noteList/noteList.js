@@ -16,8 +16,9 @@ let noteListModule = angular.module('noteList', ['NoteService'])
 .directive('noteList', noteListComponent)
 .factory('userFilter', [() => {
   return {
-    searchKeywords: true,
-    searchTitle: false,
+    searchInKeywords: true,
+    searchInTitle: false,
+    searchInText: false,
     searchText: "",
     searchLimit: true
   };
@@ -33,8 +34,8 @@ let noteListModule = angular.module('noteList', ['NoteService'])
   };})
 .filter('searchByKeywords', function() {
   let searchByKeywords = (item, input) => {
-    let noteKeywords = item.keywords.split(',');
-    let searchKeywords = input.split(' ');
+    let noteKeywords = item.keywords.toLowerCase().split(',');
+    let searchKeywords = input.toLowerCase().split(' ');
     let found = 0;
     for (let searchKeyword of searchKeywords) {
       for (let noteKeyword of noteKeywords) {
@@ -47,8 +48,8 @@ let noteListModule = angular.module('noteList', ['NoteService'])
     return found === searchKeywords.length;
   };
   let searchByTitle = (item, input) => {
-    let noteTitle = item.title.split(' ');
-    let searchTitle = input.split(' ');
+    let noteTitle = item.title.toLowerCase().split(' ');
+    let searchTitle = input.toLowerCase().split(' ');
     let found = 0;
     for (let searchT of searchTitle) {
       for (let noteT of noteTitle) {
@@ -60,7 +61,18 @@ let noteListModule = angular.module('noteList', ['NoteService'])
     }
     return found === searchTitle.length;
   };
-  return function(items, input = "", searchKeywords, searchTitle, searchLimit) {
+  let searchByText = (item, input) => {
+    let noteText = item.text.toLowerCase();
+    let searchText = input.toLowerCase().split(' ');
+    let found = 0;
+    for (let searchT of searchText) {
+      if (noteText.indexOf(searchT) >= 0) {
+        found += 1;
+      }
+    }
+    return found === searchText.length;
+  };
+  return function(items, input = "", searchKeywords, searchTitle, searchText, searchLimit) {
     let max = 0;
     return items.filter(function(item) {
       max++;
@@ -69,7 +81,8 @@ let noteListModule = angular.module('noteList', ['NoteService'])
       }
       let foundKeywords = searchKeywords === true ? searchByKeywords(item, input) : false;
       let foundTitle = searchTitle === true ? searchByTitle(item, input) : false;
-      return foundKeywords || foundTitle;
+      let foundText = searchText === true ? searchByText(item, input) : false;
+      return foundKeywords || foundTitle || foundText;
     });
   };
 });

@@ -2,36 +2,44 @@
 // Note List Filter
 // ***************************************************************************
 .section-note-search {
- margin: 10px 0px -70px 0px;
- .input-field {
-   width: 100%;
-   margin-top: .5em;
-   label {
-    left: 12px;
-   }
- }
- .options {
-  position: absolute;
-  right: 15px;
-  top: 62px;
+  margin: 10px 0px 0 0px;
+  top: 0px;
+  width: 100%;
   z-index: 100;
- }
- p {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 15px;
- }
+  position: fixed;
+  background: white;
+  height: 100px;
+  .input-field {
+    width: 100%;
+    margin-top: .5em;
+    label {
+      left: 12px;
+    }
+  }
+  .options {
+    position: absolute;
+    right: 15px;
+    top: 62px;
+    z-index: 100;
+  }
+  p {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+  }
 }
-
 
 // ***************************************************************************
 // Note List
 // ***************************************************************************
 
 .section-note-list {
-  margin: -30px 0px -20px 0px;
+  margin: 110px 0px -20px 0px;
   padding-top: 0;
   padding-bottom: 0;
+  .collection {
+    border-top: none;
+  }
   li {
     cursor: pointer;
     padding: 0;
@@ -75,7 +83,6 @@
   }
 }
 
-
 // ***************************************************************************
 // Note One
 // ***************************************************************************
@@ -88,7 +95,8 @@
       display: inline-block;
       text-align: left;
       float: none;
-    };
+    }
+  ;
   }
   .note {
     padding-bottom: 25px !important;
@@ -147,8 +155,6 @@
   }
 }
 
-
-
 // ***************************************************************************
 // Note Preview
 // ***************************************************************************
@@ -171,8 +177,8 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   @include transition-e(.3s);
   &.stretch {
-      width: 70%;
-      max-width: none;
+    width: 70%;
+    max-width: none;
   }
   &.ng-enter {
     @include transition-e(.5s);
@@ -312,6 +318,7 @@
     }
   }
 }
+
 .border-around {
   border: 1px solid #ccc;
 }
@@ -319,3 +326,4 @@
 .ta-scroll-window {
   margin-top: 10px;
 }
+

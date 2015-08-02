@@ -5,12 +5,16 @@
                 <div class="row">
                         <div class="options">
                         <p>
-                            <input type="checkbox" id="sKeywords" ng-model="vm.userFilter.searchKeywords" />
+                            <input type="checkbox" id="sKeywords" ng-model="vm.userFilter.searchInKeywords" />
                             <label for="sKeywords">Keywords</label>
                         </p>
                         <p>
-                            <input type="checkbox" id="sTitle" ng-model="vm.userFilter.searchTitle" />
+                            <input type="checkbox" id="sTitle" ng-model="vm.userFilter.searchInTitle" />
                             <label for="sTitle">Title</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="sText" ng-model="vm.userFilter.searchInText" />
+                            <label for="sText">Text</label>
                         </p>
                     </div>
                     <div class="input-field col">
@@ -25,7 +29,7 @@
 <section class="section-note-list" ng-class="{'show-preview': vm.notePreview}">
     <ul class="collection">
         <div class="col s12">
-            <li class="note-list collection-item" ng-class="{'show': vm.notePreview.note === note}" ng-repeat="note in vm.notes | orderBy:'-id' | searchByKeywords:vm.userFilter.searchText:vm.userFilter.searchKeywords:vm.userFilter.searchTitle:vm.searchLimit" ng-click="vm.showPreview(note);">
+            <li class="note-list collection-item" ng-class="{'show': vm.notePreview.note === note}" ng-repeat="note in vm.notes | orderBy:'-id' | searchByKeywords:vm.userFilter.searchText:vm.userFilter.searchInKeywords:vm.userFilter.searchInTitle:vm.userFilter.searchInText:vm.searchLimit" ng-click="vm.showPreview(note);">
                 <div class="note-mini">
                     <span class="note-mini__title" ng-bind="::note.title"></span>
                     <span class="note-mini__date" ng-bind="::note.date"></span>

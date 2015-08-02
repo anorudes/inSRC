@@ -58,7 +58,13 @@ main {
   min-height: 265px; }
 
 .section-note-search {
-  margin: 10px 0px -70px 0px; }
+  margin: 10px 0px 0 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
+  position: fixed;
+  background: white;
+  height: 100px; }
   .section-note-search .input-field {
     width: 100%;
     margin-top: .5em; }
@@ -75,9 +81,11 @@ main {
     margin-right: 15px; }
 
 .section-note-list {
-  margin: -30px 0px -20px 0px;
+  margin: 110px 0px -20px 0px;
   padding-top: 0;
   padding-bottom: 0; }
+  .section-note-list .collection {
+    border-top: none; }
   .section-note-list li {
     cursor: pointer;
     padding: 0;
