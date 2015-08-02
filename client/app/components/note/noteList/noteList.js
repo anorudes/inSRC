@@ -35,7 +35,7 @@ let noteListModule = angular.module('noteList', ['NoteService'])
 .filter('searchByKeywords', function() {
   let searchByKeywords = (item, input) => {
     let noteKeywords = item.keywords.toLowerCase().split(',');
-    let searchKeywords = input.toLowerCase().split(' ');
+    let searchKeywords = input.split(' ');
     let found = 0;
     for (let searchKeyword of searchKeywords) {
       for (let noteKeyword of noteKeywords) {
@@ -49,7 +49,7 @@ let noteListModule = angular.module('noteList', ['NoteService'])
   };
   let searchByTitle = (item, input) => {
     let noteTitle = item.title.toLowerCase().split(' ');
-    let searchTitle = input.toLowerCase().split(' ');
+    let searchTitle = input.split(' ');
     let found = 0;
     for (let searchT of searchTitle) {
       for (let noteT of noteTitle) {
@@ -63,7 +63,7 @@ let noteListModule = angular.module('noteList', ['NoteService'])
   };
   let searchByText = (item, input) => {
     let noteText = item.text.toLowerCase();
-    let searchText = input.toLowerCase().split(' ');
+    let searchText = input.split(' ');
     let found = 0;
     for (let searchT of searchText) {
       if (noteText.indexOf(searchT) >= 0) {
@@ -74,6 +74,7 @@ let noteListModule = angular.module('noteList', ['NoteService'])
   };
   return function(items, input = "", searchKeywords, searchTitle, searchText, searchLimit) {
     let max = 0;
+    input = input.toLowerCase();
     return items.filter(function(item) {
       max++;
       if (searchLimit && max > 100) {
