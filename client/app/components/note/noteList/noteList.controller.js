@@ -20,7 +20,6 @@ class NoteListController {
     $scope.notePreview = notePreview;
     this.stretch = false;
     this.searchLimit = ConfigService.configData.searchLimit;
-
     this.stretchToggle = () => {
       this.stretch = !this.stretch;
     };
@@ -36,7 +35,6 @@ class NoteListController {
 
     this.closePreview = () => {
       $scope.notePreview.note = false;
-      $scope.$apply();
     }
 
     $window.document.getElementById('search').focus();

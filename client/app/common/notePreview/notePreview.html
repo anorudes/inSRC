@@ -1,6 +1,6 @@
 <div class="preview">
-  <div class="preview__close fa fa-times" ng-click="vm.closePreview()"></div>
-  <div class="preview__stretch fa fa-arrows-h" ng-click="vm.stretchToggle()"></div>
+  <div class="preview__close fa fa-times" ng-click="closePreview()"></div>
+  <div class="preview__stretch fa fa-arrows-h" ng-click="stretchToggle()"></div>
   <div class="preview__title">{{ vm.note.title }}</div>
   <div hljs class="preview__code" ng-class="{'word-wrap': vm.wordWrap}" no-escape source="vm.note.text"></div>
   <div class="preview__keywords">{{ vm.note.keywords }}</div>
@@ -9,6 +9,6 @@
     <!-- toDo -->
     <a class="preview__icon material-icons" ui-sref="edit({id: vm.note.id})">input</a>
     <!-- toDo -->
-    <a class="preview__icon material-icons" ng-confirm-click="Would you like to delete?" confirmed-click="vm.delete()">delete</a>
+    <a class="preview__icon material-icons" ng-click="vm.deleteModal()">delete</a>
   </div>
 </div>

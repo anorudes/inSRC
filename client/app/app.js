@@ -13,6 +13,7 @@ let appModule = angular.module('app', [
     'textAngular',
     'hljs',
     'angularMoment',
+    'ngDialog',
     Services.name,
     Common.name,
     Components.name,

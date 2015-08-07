@@ -12,6 +12,7 @@
     "textAngular": "~1.4.2",
     "angular-highlightjs": "~0.4.1",
     "angular-sanitize": "~1.4.3",
-    "angular-moment": "~0.10.1"
+    "angular-moment": "~0.10.1",
+    "ngDialog": "~0.4.0"
   }
 }
