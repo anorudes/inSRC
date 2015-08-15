@@ -1,6 +1,7 @@
 let skins = [
   "red",
-  "blue"
+  "blue",
+  "white"
 ];
 
 let schemes = [
